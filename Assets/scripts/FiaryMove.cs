@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FiaryMove : MonoBehaviour {
-	float speed = 0.4f;
+	float speed = 0.3f;
 	int rotespeed= 2;
 
 	private Animator Fairymove;
