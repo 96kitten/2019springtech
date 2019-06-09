@@ -32,5 +32,6 @@ public class FiaryMove : MonoBehaviour {
 		if (Input.GetKey (KeyCode.A)) {
 			transform.Rotate (0,-rotespeed,0);
 		}
+
 	}
 }

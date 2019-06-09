@@ -27,8 +27,15 @@ public class enemymove : MonoBehaviour {
 
 		//徘徊するやつ http://blog.uzutaka.com/entry/2015/10/14/031633 より
 		if (search == true) {
-			Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
-			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmooth);
+//			Vector3 direction = player.transform.position - transform.position;
+//			Quaternion toRotation = Quaternion.FromToRotation(transform.forward, direction);
+//			transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, speed * Time.deltaTime);
+			//Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
+			//Debug.Log (targetRotation);
+			//targetRotation = Quaternion.Euler (0,targetRotation.y,0);
+			//transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmooth);
+			transform.LookAt(player.position);
+			transform.rotation = Quaternion.Euler (0, this.transform.rotation.eulerAngles.y, 0);
 			transform.Translate(Vector3.forward * speed * Time.deltaTime);
 		}
 		if (search == false) {
@@ -36,9 +43,9 @@ public class enemymove : MonoBehaviour {
 			if (sqrDistanceToTarget < changeTargetSqrDistance) {
 				targetPosition = GetRandomPositionOnLevel ();
 			}
-			Quaternion targetRotation = Quaternion.LookRotation(targetPosition - transform.position);
+			/*Quaternion targetRotation = Quaternion.LookRotation(targetPosition - transform.position);
 			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmooth);
-			transform.Translate(Vector3.forward * speed * Time.deltaTime);
+			transform.Translate(Vector3.forward * speed * Time.deltaTime);*/
 		}
 
 	}
