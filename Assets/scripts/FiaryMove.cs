@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FiaryMove : MonoBehaviour {
-	float speed = 0.2f;
+	float speed = 6;
 	int rotespeed= 2;
 
 	private Animator Fairymove;
@@ -18,12 +19,12 @@ public class FiaryMove : MonoBehaviour {
 		//主人公の移動
 		Fairymove.SetBool ("is_walking", false);
 		if (Input.GetKey (KeyCode.W)) {
-			this.transform.Translate (Vector3.forward * speed);
+			this.transform.Translate (Vector3.forward * speed * Time.deltaTime);
 			Fairymove.SetBool ("is_walking", true);
 		}
 
 		if (Input.GetKey (KeyCode.S)) {
-			this.transform.Translate(Vector3.forward * -speed);
+			this.transform.Translate(Vector3.forward * -speed * Time.deltaTime);
 		}
 
 		if (Input.GetKey (KeyCode.D)) {
@@ -33,5 +34,16 @@ public class FiaryMove : MonoBehaviour {
 			transform.Rotate (0,-rotespeed,0);
 		}
 
+	}
+
+	void OnCollisionEnter(Collision other){
+		if (other.gameObject.tag == "Enemy") {
+			GameManager.instance.battleEnemyID = 1;
+			SceneManager.LoadScene ("Battlescene");
+		}
+		if (other.gameObject.tag == "Enemy2") {
+			GameManager.instance.battleEnemyID = 2;
+			SceneManager.LoadScene ("Battlescene");
+		}
 	}
 }
