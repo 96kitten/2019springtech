@@ -4,15 +4,23 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PlayerBattle : MonoBehaviour {
+	public BattleEnemyCon battleenemy;
+
 	//ステータス
 	public int FairyHP;
 	public int FairyMP;
 
 	public Text FHP;
+	public Text FMP;
 
 	public bool turn = true;
+
+	public GameObject Enemy;
+
+	public int AttackDamage;
 
 	//ボタン選択のやつ
 	[SerializeField]
@@ -82,21 +90,26 @@ public class PlayerBattle : MonoBehaviour {
 		StatusManager.instance.BattleStart ();
 
 		FairyHP = PlayerPrefs.GetInt ("HP", 20);
-		FairyMP = PlayerPrefs.GetInt ("MP", 10);
-
+		FairyMP = PlayerPrefs.GetInt ("MP", 30);
+		FMP.text = FairyMP.ToString ();
+		FHP.text = FairyHP.ToString ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (turn == true) {
-			AttackB.interactable = true;
-			RunB.interactable = true;
-			EventSystem.current.SetSelectedGameObject (firstSelect);
-		} else if (turn == false) {
-			AttackB.interactable = false;
-			RunB.interactable = false;
-		}
-		
+		FHP.text = FairyHP.ToString();
+	}
+
+	public void ButtonOn(){
+		FHP.text = FairyHP.ToString();
+		AttackB.interactable = true;
+		RunB.interactable = true;
+		EventSystem.current.SetSelectedGameObject (firstSelect);
+	}
+
+	public void ButtonOff(){
+		AttackB.interactable = false;
+		RunB.interactable = false;
 	}
 
 	public void Attack(){
@@ -105,6 +118,7 @@ public class PlayerBattle : MonoBehaviour {
 		RunB.interactable = false;
 		BackGround.SetActive (true);
 		EventSystem.current.SetSelectedGameObject (secoundSelect);
+		ButtonOff ();
 	}
 	public void Run(){
 		currentState = state.Run;
@@ -117,25 +131,43 @@ public class PlayerBattle : MonoBehaviour {
 	}
 
 	public void Majic1(){
+		if(FairyMP >= 3){
 		StartCoroutine (AttackMotion("is_attack1", 1f,5,3,Ama1));
+		}
 	}
 
 	public void Majic2(){
-		StartCoroutine (AttackMotion("is_attack2", 1f,12,5,Ama2));
+		if (FairyMP >= 5) {
+			StartCoroutine (AttackMotion ("is_attack2", 1f, 12, 5, Ama2));
+		}
 	}
 	public void Majic3(){
-		StartCoroutine (AttackMotion("is_attack3", 2f,21,8,Ama3));
+		if (FairyMP >= 8) {
+			StartCoroutine (AttackMotion ("is_attack3", 2f, 21, 8, Ama3));
+		}
 	}
 
 	private IEnumerator AttackMotion(string animationName , float time ,int Damage ,int MP,ParticleSystem par){
 		BackGround.SetActive (false);
-		BattleF.SetBool (animationName, true);
-		yield return new WaitForSeconds (time);
-		par.Play ();
-		BattleF.SetBool (animationName, false);
-		yield return new WaitForSeconds (time);
-		par.Stop ();
-		turn = false;
+		if(FairyMP < MP){
+			ButtonOn ();
+		}
+		if (FairyMP >= MP) {
+			FairyMP -= MP;
+			FMP.text = FairyMP.ToString ();
+			BattleF.SetBool (animationName, true);
+			yield return new WaitForSeconds (time);
+			par.Play ();
+			BattleF.SetBool (animationName, false);
+			yield return new WaitForSeconds (time);
+			par.Stop ();
+			AttackDamage = Damage;
+			//BattleEnemyConのEneturn呼び出し
+			battleenemy.Eneturn ();
+		}
 	}
-		
+
+	public void winner(){
+		SceneManager.LoadScene ("Main");
+	}
 }

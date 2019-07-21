@@ -9,9 +9,11 @@ public class FiaryMove : MonoBehaviour {
 
 	private Animator Fairymove;
 
+
 	// Use this for initialization
 	void Start () {
 		Fairymove = GetComponent<Animator> ();
+		this.gameObject.transform.position = StatusManager.instance.playerpos;
 	}
 	
 	// Update is called once per frame
@@ -37,11 +39,14 @@ public class FiaryMove : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other){
+
 		if (other.gameObject.tag == "Enemy") {
+			StatusManager.instance.playerpos = this.gameObject.transform.position;
 			GameManager.instance.battleEnemyID = 1;
 			SceneManager.LoadScene ("Battlescene");
 		}
 		if (other.gameObject.tag == "Enemy2") {
+			StatusManager.instance.playerpos = this.gameObject.transform.position;
 			GameManager.instance.battleEnemyID = 2;
 			SceneManager.LoadScene ("Battlescene");
 		}
