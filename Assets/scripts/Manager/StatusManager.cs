@@ -5,9 +5,14 @@ using UnityEngine;
 public class StatusManager : MonoBehaviour {
 
 	public int PlayerHP = 20;
-	public int PlayerMP = 10;
+	public int PlayerMP = 30;
+
+	public int MAXHP = 20;
+	public int MAXMP = 30;
+
 
 	public Vector3 playerpos;
+	public Quaternion playerrote;
 
 	public static StatusManager instance;
 
@@ -24,6 +29,8 @@ public class StatusManager : MonoBehaviour {
 	void Start () {
 		PlayerHP = PlayerPrefs.GetInt ("HP", 20);
 		PlayerMP = PlayerPrefs.GetInt ("MP", 30);
+		MAXHP = PlayerPrefs.GetInt ("MHP",20);
+		MAXMP = PlayerPrefs.GetInt ("MMP",30);
 
 		playerpos = new Vector3 (33,1,-15);
 	}
@@ -32,7 +39,7 @@ public class StatusManager : MonoBehaviour {
 	void Update () {
 	}
 
-	void Status(){
+	public void Status (){
 		PlayerPrefs.SetInt ("HP", PlayerHP);
 		PlayerPrefs.SetInt ("MP", PlayerMP);
 		PlayerPrefs.Save ();
@@ -40,7 +47,17 @@ public class StatusManager : MonoBehaviour {
 
 	public void BattleStart (){
 		PlayerHP = PlayerPrefs.GetInt ("HP", 20);
-		PlayerMP = PlayerPrefs.GetInt ("MP", 10);
+		PlayerMP = PlayerPrefs.GetInt ("MP", 30);
+	}
+
+	public void SaveMaxStatus(){
+		PlayerPrefs.SetInt ("MHP",20);
+		PlayerPrefs.SetInt ("MMP",30);
+	}
+
+	public void LoadMaxStatus(){
+		MAXHP = PlayerPrefs.GetInt ("MHP",20);
+		MAXMP = PlayerPrefs.GetInt ("MMP",30);
 	}
 		
 }

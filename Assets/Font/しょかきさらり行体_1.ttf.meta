@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 6f17aee7e34bf4c4d913659123fae573
+timeCreated: 1565076616
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: ShokakiSarariGyotai
+  fontNames:
+  - ShokakiSarariGyotai
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

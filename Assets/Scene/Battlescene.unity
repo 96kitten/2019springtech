@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d2912277ea643779cfb5d8e6b22d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleEnemyID: 1
+  battleEnemyID: 0
   enemy1count: 0
   enemy2count: 0
 --- !u!4 &321300444
@@ -2654,7 +2654,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1691744844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 248.45175, y: -137.01895, z: 0}
+  m_LocalPosition: {x: 248.45175, y: -137.01892, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1204289038}
@@ -2662,7 +2662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6606044, y: 0.038575668}
   m_AnchorMax: {x: 0.957, y: 0.22732568}
-  m_AnchoredPosition: {x: 1.4099731, y: 0.23001099}
+  m_AnchoredPosition: {x: 1.4099731, y: 0.2300415}
   m_SizeDelta: {x: -4.419983, y: -2.2900085}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1691744846

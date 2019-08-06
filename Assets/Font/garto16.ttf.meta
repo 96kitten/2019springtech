@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e3ac5d90f5fa440ea9fafbb488dd76c1
+timeCreated: 1565076241
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Garton
+  fontNames:
+  - Garton
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

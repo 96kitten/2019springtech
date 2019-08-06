@@ -122,6 +122,10 @@ public class PlayerBattle : MonoBehaviour {
 	}
 	public void Run(){
 		currentState = state.Run;
+		StatusManager.instance.PlayerHP = FairyHP;
+		StatusManager.instance.PlayerMP = FairyMP;
+		StatusManager.instance.Status ();
+		SceneManager.LoadScene ("Main");
 	}
 	public void Back(){
 		BackGround.SetActive (false);
@@ -154,6 +158,8 @@ public class PlayerBattle : MonoBehaviour {
 		}
 		if (FairyMP >= MP) {
 			FairyMP -= MP;
+			StatusManager.instance.PlayerMP = FairyMP;
+			StatusManager.instance.Status ();
 			FMP.text = FairyMP.ToString ();
 			BattleF.SetBool (animationName, true);
 			yield return new WaitForSeconds (time);
@@ -168,6 +174,9 @@ public class PlayerBattle : MonoBehaviour {
 	}
 
 	public void winner(){
+		StatusManager.instance.PlayerHP = FairyHP;
+		StatusManager.instance.PlayerMP = FairyMP;
+		StatusManager.instance.Status ();
 		SceneManager.LoadScene ("Main");
 	}
 }

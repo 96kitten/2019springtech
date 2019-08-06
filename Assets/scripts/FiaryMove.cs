@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FiaryMove : MonoBehaviour {
 	float speed = 6;
 	int rotespeed= 2;
-
 	private Animator Fairymove;
 
 
@@ -14,6 +14,7 @@ public class FiaryMove : MonoBehaviour {
 	void Start () {
 		Fairymove = GetComponent<Animator> ();
 		this.gameObject.transform.position = StatusManager.instance.playerpos;
+		this.gameObject.transform.rotation = StatusManager.instance.playerrote;
 	}
 	
 	// Update is called once per frame
@@ -36,19 +37,26 @@ public class FiaryMove : MonoBehaviour {
 			transform.Rotate (0,-rotespeed,0);
 		}
 
+		if (Input.GetKey (KeyCode.E)) {
+			SceneManager.LoadScene ("StatusItemHP");
+		}
+
 	}
 
 	void OnCollisionEnter(Collision other){
 
 		if (other.gameObject.tag == "Enemy") {
 			StatusManager.instance.playerpos = this.gameObject.transform.position;
+			StatusManager.instance.playerrote = this.gameObject.transform.rotation;
 			GameManager.instance.battleEnemyID = 1;
 			SceneManager.LoadScene ("Battlescene");
 		}
 		if (other.gameObject.tag == "Enemy2") {
 			StatusManager.instance.playerpos = this.gameObject.transform.position;
+			StatusManager.instance.playerrote = this.gameObject.transform.rotation;
 			GameManager.instance.battleEnemyID = 2;
 			SceneManager.LoadScene ("Battlescene");
 		}
 	}
+		
 }

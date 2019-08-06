@@ -20,7 +20,10 @@ public class Enemy2move : MonoBehaviour {
 	void Start () {
 		search = false;
 		targetPosition = GetRandomPositionOnLevel();
-		player = GameObject.FindWithTag("Player").transform;
+		if (SceneManager.GetActiveScene ().name == "Main") {
+			targetPosition = GetRandomPositionOnLevel();
+			player = GameObject.FindWithTag ("Player").transform;
+		}
 	}
 
 	void Update () {
