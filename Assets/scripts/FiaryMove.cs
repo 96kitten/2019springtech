@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class FiaryMove : MonoBehaviour {
 	float speed = 6;
 	int rotespeed= 2;
+	public bool moving;
 	private Animator Fairymove;
 
 
@@ -15,32 +16,34 @@ public class FiaryMove : MonoBehaviour {
 		Fairymove = GetComponent<Animator> ();
 		this.gameObject.transform.position = StatusManager.instance.playerpos;
 		this.gameObject.transform.rotation = StatusManager.instance.playerrote;
+		moving = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//主人公の移動
-		Fairymove.SetBool ("is_walking", false);
-		if (Input.GetKey (KeyCode.W)) {
-			this.transform.Translate (Vector3.forward * speed * Time.deltaTime);
-			Fairymove.SetBool ("is_walking", true);
-		}
+		if (moving == true) {
+			Fairymove.SetBool ("is_walking", false);
+			if (Input.GetKey (KeyCode.W)) {
+				this.transform.Translate (Vector3.forward * speed * Time.deltaTime);
+				Fairymove.SetBool ("is_walking", true);
+			}
 
-		if (Input.GetKey (KeyCode.S)) {
-			this.transform.Translate(Vector3.forward * -speed * Time.deltaTime);
-		}
+			if (Input.GetKey (KeyCode.S)) {
+				this.transform.Translate (Vector3.forward * -speed * Time.deltaTime);
+			}
 
-		if (Input.GetKey (KeyCode.D)) {
-			transform.Rotate (0,rotespeed,0);
-		}
-		if (Input.GetKey (KeyCode.A)) {
-			transform.Rotate (0,-rotespeed,0);
-		}
+			if (Input.GetKey (KeyCode.D)) {
+				transform.Rotate (0, rotespeed, 0);
+			}
+			if (Input.GetKey (KeyCode.A)) {
+				transform.Rotate (0, -rotespeed, 0);
+			}
 
-		if (Input.GetKey (KeyCode.E)) {
-			SceneManager.LoadScene ("StatusItemHP");
+			if (Input.GetKey (KeyCode.E)) {
+				SceneManager.LoadScene ("StatusItemHP");
+			}
 		}
-
 	}
 
 	void OnCollisionEnter(Collision other){

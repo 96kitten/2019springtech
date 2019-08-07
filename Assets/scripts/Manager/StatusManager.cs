@@ -53,11 +53,20 @@ public class StatusManager : MonoBehaviour {
 	public void SaveMaxStatus(){
 		PlayerPrefs.SetInt ("MHP",20);
 		PlayerPrefs.SetInt ("MMP",30);
+		PlayerPrefs.Save ();
 	}
 
 	public void LoadMaxStatus(){
 		MAXHP = PlayerPrefs.GetInt ("MHP",20);
 		MAXMP = PlayerPrefs.GetInt ("MMP",30);
+	}
+
+	public void hprecovery () {
+		PlayerHP = MAXHP;
+		PlayerMP = MAXMP;
+		PlayerPrefs.SetInt ("HP", PlayerHP);
+		PlayerPrefs.SetInt ("MP", PlayerMP);
+		PlayerPrefs.Save ();
 	}
 		
 }
