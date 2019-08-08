@@ -17,6 +17,7 @@ public class FiaryMove : MonoBehaviour {
 		this.gameObject.transform.position = StatusManager.instance.playerpos;
 		this.gameObject.transform.rotation = StatusManager.instance.playerrote;
 		moving = true;
+		ItemDestroyMain.instance.destitemM ();
 	}
 	
 	// Update is called once per frame

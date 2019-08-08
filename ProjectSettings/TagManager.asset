@@ -9,6 +9,14 @@ TagManager:
   - WorldEnd
   - First
   - recover
+  - hpluss
+  - hplusm
+  - hplusl
+  - hplusg
+  - mpluss
+  - mplusm
+  - mplusl
+  - mplusg
   layers:
   - Default
   - TransparentFX

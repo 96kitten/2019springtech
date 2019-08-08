@@ -61,8 +61,8 @@ public class enemymove : MonoBehaviour {
 
 	//索敵範囲に入ってきたとき
 	void OnTriggerEnter (Collider other){
-		if(StatusManager.instance.RestS == false){
 		if (other.CompareTag ("Player")) {
+			if(StatusManager.instance.RestS == true){
 			search = true;
 		}
 		}

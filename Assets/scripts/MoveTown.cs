@@ -50,12 +50,125 @@ public class MoveTown : MonoBehaviour {
 		if(other.gameObject.tag == "First"){
 			serif.text = "ストァーフの村 緑が多くてのどやかな場所" ;
 			if(Input.GetKey(KeyCode.Space)){
-				Debug.Log ("space");
 				StatusManager.instance.playerpos = this.gameObject.transform.position;
 				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
 				SceneManager.LoadScene("FirstTownSce");
 			}
 			Log.SetActive (true);
+		}
+		if (other.gameObject.tag == "hpluss" || other.gameObject.tag == "mpluss") {
+			serif.text = "柔らかな力を感じる" ;
+			Log.SetActive (true);
+			if (Input.GetKey (KeyCode.Space)) {
+				if (other.gameObject.tag == "hpluss") {
+					ItemManager.instance.ItemLoad ();
+					ItemManager.instance.mhpi1 += 1;
+					ItemManager.instance.ItemGet ();
+					Destroy (other.gameObject);
+					Log.SetActive (false);
+					if(other.gameObject.name == "HPitem1"){
+						ItemDestroyMain.instance.hi1 = false;
+					}
+				}
+				if (other.gameObject.tag == "mpluss") {
+					ItemManager.instance.ItemLoad ();
+					ItemManager.instance.mmpi1 += 1;
+					ItemManager.instance.ItemGet ();
+					Destroy (other.gameObject);
+					Log.SetActive (false);
+					if(other.gameObject.name == "MPitem1"){
+						ItemDestroyMain.instance.mi1 = false;
+					}
+				}
+			}
+		}
+		if (other.gameObject.tag == "hplusm" || other.gameObject.tag == "mplusm") {
+			serif.text = "暖かな力を感じる" ;
+			Log.SetActive (true);
+			if (Input.GetKey (KeyCode.Space)) {
+				if (other.gameObject.tag == "hplusm") {
+					ItemManager.instance.ItemLoad ();
+					ItemManager.instance.mhpi2 += 1;
+					ItemManager.instance.ItemGet ();
+					Destroy (other.gameObject);
+					Log.SetActive (false);
+					if(other.gameObject.name == "HPitem2"){
+						ItemDestroyMain.instance.hi2 = false;
+					}
+					if(other.gameObject.name == "3HPitem2"){
+						ItemDestroyMain.instance.hi5 = false;
+					}
+				}
+				if (other.gameObject.tag == "mplusm") {
+					ItemManager.instance.ItemLoad ();
+					ItemManager.instance.mmpi2 += 1;
+					ItemManager.instance.ItemGet ();
+					Destroy (other.gameObject);
+					Log.SetActive (false);
+					if(other.gameObject.name == "MPitem2"){
+						ItemDestroyMain.instance.mi2 = false;
+					}
+				}
+			}
+		}
+		if (other.gameObject.tag == "hplusl" || other.gameObject.tag == "mplusl") {
+			serif.text = "心地のいい力を感じる" ;
+			Log.SetActive (true);
+			if (Input.GetKey (KeyCode.Space)) {
+				if (other.gameObject.tag == "hplusl") {
+					ItemManager.instance.ItemLoad ();
+					ItemManager.instance.mhpi3 += 1;
+					ItemManager.instance.ItemGet ();
+					Destroy (other.gameObject);
+					Log.SetActive (false);
+					if(other.gameObject.name == "HPitem3"){
+						ItemDestroyMain.instance.hi3 = false;
+					}
+				}
+				if (other.gameObject.tag == "mplusl") {
+					ItemManager.instance.ItemLoad ();
+					ItemManager.instance.mmpi3 += 1;
+					ItemManager.instance.ItemGet ();
+					Destroy (other.gameObject);
+					Log.SetActive (false);
+					if(other.gameObject.name == "HPitem3"){
+						ItemDestroyMain.instance.mi3 = false;
+					}
+					if(other.gameObject.name == "2MPitem3"){
+						ItemDestroyMain.instance.mi6 = false;
+					}
+					if(other.gameObject.name == "3MPitem2"){
+						ItemDestroyMain.instance.mi7 = false;
+					}
+				}
+			}
+		}
+		if (other.gameObject.tag == "hplusg" || other.gameObject.tag == "mplusg") {
+			serif.text = "途方も無い力を感じる" ;
+			Log.SetActive (true);
+			if (Input.GetKey (KeyCode.Space)) {
+				if (other.gameObject.tag == "hplusg") {
+					ItemManager.instance.ItemLoad ();
+					ItemManager.instance.mhpi4 += 1;
+					ItemManager.instance.ItemGet ();
+					Destroy (other.gameObject);
+					if(other.gameObject.name == "HPitem4"){
+						ItemDestroyMain.instance.hi4 = false;
+					}
+				}
+				if (other.gameObject.tag == "mplusg") {
+					ItemManager.instance.ItemLoad ();
+					ItemManager.instance.mmpi4 += 1;
+					ItemManager.instance.ItemGet ();
+					Destroy (other.gameObject);
+					if(other.gameObject.name == "MPitem4"){
+						ItemDestroyMain.instance.mi4 = false;
+					}
+					if(other.gameObject.name == "2MPitem4"){
+						ItemDestroyMain.instance.mi5 = false;
+					}
+				}
+			}
 		}
 	}
 

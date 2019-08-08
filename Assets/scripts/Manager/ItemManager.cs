@@ -114,4 +114,27 @@ public class ItemManager : MonoBehaviour {
 		MPC1 = PlayerPrefs.GetInt ("CHMP1",0);
 		MPC1 = PlayerPrefs.GetInt ("CHMP1",0);
 	}
+
+	public void ItemGet(){
+		PlayerPrefs.SetInt ("MHPNUM",mhpi1);
+		PlayerPrefs.SetInt ("MHPNUM2",mhpi2);
+		PlayerPrefs.SetInt ("MHPNUM3",mhpi3);
+		PlayerPrefs.SetInt ("MHPNUM4",mhpi4);
+		PlayerPrefs.SetInt ("MMPNUM",mmpi1);
+		PlayerPrefs.SetInt ("MMPNUM2",mmpi2);
+		PlayerPrefs.SetInt ("MMPNUM3",mmpi3);
+		PlayerPrefs.SetInt ("MMPNUM4",mmpi4);
+		PlayerPrefs.Save ();
+	}
+
+	public void ItemLoad(){
+		mhpi1 = PlayerPrefs.GetInt ("MHPNUM",3);
+		mhpi2 = PlayerPrefs.GetInt ("MHPNUM2",1);
+		mhpi3 = PlayerPrefs.GetInt ("MHPNUM3",1);
+		mhpi4 = PlayerPrefs.GetInt ("MHPNUM4",0);
+		mmpi1 = PlayerPrefs.GetInt ("MMPNUM",3);
+		mmpi2 = PlayerPrefs.GetInt ("MMPNUM2",1);
+		mmpi3 = PlayerPrefs.GetInt ("MMPNUM3",1);
+		mmpi4 = PlayerPrefs.GetInt ("MMPNUM4",0);
+	}
 }

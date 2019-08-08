@@ -66,7 +66,7 @@ public class Itemcountermp : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		StatusManager.instance.LoadMaxStatus ();
-		MaxMPcount = StatusManager.instance.MAXHP;
+		MaxMPcount = StatusManager.instance.MAXMP;
 		MAXCounter.text = MaxMPcount.ToString ();
 		ItemManager.instance.LoadItems ();
 		I1count = ItemManager.instance.mpi1;
@@ -114,8 +114,8 @@ public class Itemcountermp : MonoBehaviour {
 			}
 		}
 		Item1cou.text = I1count.ToString ();
-		change1 = I1count * 3;
-		MaxMPcount = 20 + change1 + change2 + change3 + change4;
+		change1 = I1count * 2;
+		MaxMPcount = 30 + change1 + change2 + change3 + change4;
 		MAXCounter.text = MaxMPcount.ToString ();
 	}
 
@@ -136,7 +136,7 @@ public class Itemcountermp : MonoBehaviour {
 		}
 		Item2cou.text = I2count.ToString ();
 		change2 = I2count * 3;
-		MaxMPcount = 20 + change1 + change2 + change3 + change4;
+		MaxMPcount = 30 + change1 + change2 + change3 + change4;
 		MAXCounter.text = MaxMPcount.ToString ();
 	}
 
@@ -156,7 +156,7 @@ public class Itemcountermp : MonoBehaviour {
 		}
 		Item3cou.text = I3count.ToString ();
 		change3 = I3count * 4;
-		MaxMPcount = 20 + change1 + change2 + change3 + change4;
+		MaxMPcount = 30 + change1 + change2 + change3 + change4;
 		MAXCounter.text = MaxMPcount.ToString ();
 	}
 
@@ -175,7 +175,7 @@ public class Itemcountermp : MonoBehaviour {
 		}
 		Item4cou.text = I4count.ToString ();
 		change4 = I4count * 5;
-		MaxMPcount = 20 + change1 + change2 + change3 + change4;
+		MaxMPcount = 30 + change1 + change2 + change3 + change4;
 		MAXCounter.text = MaxMPcount.ToString ();
 	}
 

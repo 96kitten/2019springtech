@@ -55,7 +55,6 @@ public class StatusManager : MonoBehaviour {
 	public void SaveMaxStatus(){
 		PlayerPrefs.SetInt ("MHP",MAXHP);
 		PlayerPrefs.SetInt ("MMP",MAXMP);
-		Debug.Log (MAXHP + "maxhp");
 		PlayerPrefs.Save ();
 	}
 
@@ -66,7 +65,6 @@ public class StatusManager : MonoBehaviour {
 
 	public void hprecovery () {
 		LoadMaxStatus ();
-		Debug.Log (MAXHP + "loadhp");
 		PlayerHP = MAXHP;
 		PlayerMP = MAXMP;
 		PlayerPrefs.SetInt ("HP", PlayerHP);
