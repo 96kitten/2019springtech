@@ -41,6 +41,8 @@ public class FiaryMove : MonoBehaviour {
 			}
 
 			if (Input.GetKey (KeyCode.E)) {
+				StatusManager.instance.playerpos = this.gameObject.transform.position;
+				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
 				SceneManager.LoadScene ("StatusItemHP");
 			}
 		}

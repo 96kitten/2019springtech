@@ -61,8 +61,10 @@ public class Enemy2move : MonoBehaviour {
 
 	//索敵範囲に入ってきたとき
 	void OnTriggerEnter (Collider other){
-		if (other.CompareTag ("Player")) {
-			search = true;
+		if (StatusManager.instance.RestS == false) {
+			if (other.CompareTag ("Player")) {
+				search = true;
+			}
 		}
 	}
 

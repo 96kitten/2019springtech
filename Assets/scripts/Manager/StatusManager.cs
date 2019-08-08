@@ -10,6 +10,8 @@ public class StatusManager : MonoBehaviour {
 	public int MAXHP = 20;
 	public int MAXMP = 30;
 
+	public bool RestS;
+
 
 	public Vector3 playerpos;
 	public Quaternion playerrote;
@@ -31,7 +33,7 @@ public class StatusManager : MonoBehaviour {
 		PlayerMP = PlayerPrefs.GetInt ("MP", 30);
 		MAXHP = PlayerPrefs.GetInt ("MHP",20);
 		MAXMP = PlayerPrefs.GetInt ("MMP",30);
-
+		RestS = true;
 		playerpos = new Vector3 (33,1,-15);
 	}
 	
@@ -51,8 +53,9 @@ public class StatusManager : MonoBehaviour {
 	}
 
 	public void SaveMaxStatus(){
-		PlayerPrefs.SetInt ("MHP",20);
-		PlayerPrefs.SetInt ("MMP",30);
+		PlayerPrefs.SetInt ("MHP",MAXHP);
+		PlayerPrefs.SetInt ("MMP",MAXMP);
+		Debug.Log (MAXHP + "maxhp");
 		PlayerPrefs.Save ();
 	}
 
@@ -62,6 +65,8 @@ public class StatusManager : MonoBehaviour {
 	}
 
 	public void hprecovery () {
+		LoadMaxStatus ();
+		Debug.Log (MAXHP + "loadhp");
 		PlayerHP = MAXHP;
 		PlayerMP = MAXMP;
 		PlayerPrefs.SetInt ("HP", PlayerHP);

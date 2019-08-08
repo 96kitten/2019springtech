@@ -36,6 +36,16 @@ public class ItemManager : MonoBehaviour {
 	public int mmpi3;
 	public int mmpi4;
 
+	public int HPC1;
+	public int HPC2;
+	public int HPC3;
+	public int HPC4;
+
+	public int MPC1;
+	public int MPC2;
+	public int MPC3;
+	public int MPC4;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -64,6 +74,15 @@ public class ItemManager : MonoBehaviour {
 		PlayerPrefs.SetInt ("MMPNUM2",mmpi2);
 		PlayerPrefs.SetInt ("MMPNUM3",mmpi3);
 		PlayerPrefs.SetInt ("MMPNUM4",mmpi4);
+
+		PlayerPrefs.SetInt ("CHHP1",HPC1);
+		PlayerPrefs.SetInt ("CHHP2",HPC2);
+		PlayerPrefs.SetInt ("CHHP3",HPC3);
+		PlayerPrefs.SetInt ("CHHP4",HPC4);
+		PlayerPrefs.SetInt ("CHMP1",MPC1);
+		PlayerPrefs.SetInt ("CHMP2",MPC2);
+		PlayerPrefs.SetInt ("CHMP3",MPC3);
+		PlayerPrefs.SetInt ("CHMP4",MPC4);
 		PlayerPrefs.Save ();
 	}
 
@@ -85,5 +104,14 @@ public class ItemManager : MonoBehaviour {
 		mmpi2 = PlayerPrefs.GetInt ("MMPNUM2",1);
 		mmpi3 = PlayerPrefs.GetInt ("MMPNUM3",1);
 		mmpi4 = PlayerPrefs.GetInt ("MMPNUM4",0);
+
+		HPC1 = PlayerPrefs.GetInt ("CHHP1",0);
+		HPC2 = PlayerPrefs.GetInt ("CHHP2",0);
+		HPC3 = PlayerPrefs.GetInt ("CHHP3",0);
+		HPC4 = PlayerPrefs.GetInt ("CHHP4",0);
+		MPC1 = PlayerPrefs.GetInt ("CHMP1",0);
+		MPC1 = PlayerPrefs.GetInt ("CHMP1",0);
+		MPC1 = PlayerPrefs.GetInt ("CHMP1",0);
+		MPC1 = PlayerPrefs.GetInt ("CHMP1",0);
 	}
 }

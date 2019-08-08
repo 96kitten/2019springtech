@@ -38,6 +38,7 @@ public class MoveTown : MonoBehaviour {
 				Log.SetActive (true);
 			}
 			if(Input.GetKey(KeyCode.Space)){
+				StatusManager.instance.RestS = false;
 				fiarymove.moving = false;
 			StatusManager.instance.LoadMaxStatus ();
 			StatusManager.instance.hprecovery ();
@@ -63,6 +64,7 @@ public class MoveTown : MonoBehaviour {
 		serif.text = "体力が回復した" ;
 		mover.SetBool ("is_Resting",false);
 		fiarymove.moving = true;
+		StatusManager.instance.RestS = true;
 	}
 
 	void OnTriggerExit(Collider other){
