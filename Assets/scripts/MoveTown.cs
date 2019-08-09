@@ -47,14 +47,23 @@ public class MoveTown : MonoBehaviour {
 				StartCoroutine ("Animate");
 			}
 		}
+		if(other.gameObject.tag == "backtotown"){
+			serif.text = "ここが村の出口だ" ;
+			Log.SetActive (true);
+			if(Input.GetKey(KeyCode.Space)){
+				Log.SetActive (false);
+				SceneManager.LoadScene("Main");
+			}
+		}
 		if(other.gameObject.tag == "First"){
 			serif.text = "ストァーフの村 緑が多くてのどやかな場所" ;
+			Log.SetActive (true);
 			if(Input.GetKey(KeyCode.Space)){
+				Log.SetActive (false);
 				StatusManager.instance.playerpos = this.gameObject.transform.position;
 				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
-				SceneManager.LoadScene("FirstTownSce");
+			    SceneManager.LoadScene("FirstTownSce");
 			}
-			Log.SetActive (true);
 		}
 		if (other.gameObject.tag == "hpluss" || other.gameObject.tag == "mpluss") {
 			serif.text = "柔らかな力を感じる" ;

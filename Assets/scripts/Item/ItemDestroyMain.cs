@@ -59,7 +59,13 @@ public class ItemDestroyMain : MonoBehaviour {
 		mi5 = true;
 		mi6 = true;
 		mi7 = true;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	}
 
+	public void destitemM(){
 		HI1 = GameObject.Find ("HPitem1");
 		HI2 = GameObject.Find ("HPitem2");
 		HI3 = GameObject.Find ("HPitem3");
@@ -73,15 +79,8 @@ public class ItemDestroyMain : MonoBehaviour {
 		MI5 = GameObject.Find ("2MPitem4");
 		MI6 = GameObject.Find ("2MPitem3");
 		MI7 = GameObject.Find ("3MPitem3");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
-
-	public void destitemM(){
 		if (hi1 == false) {
-			Destroy (HI1);
+			Destroy (HI1.gameObject);
 		}
 		if (hi2 == false) {
 			Destroy (HI2);

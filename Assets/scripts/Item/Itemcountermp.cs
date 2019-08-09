@@ -7,14 +7,14 @@ using UnityEngine.EventSystems;
 
 public class Itemcountermp : MonoBehaviour {
 	[SerializeField]
-	private Button firstSelect;
+	private Button firstButton;
 
 	public void ActivateOrNotActivate(bool flag) {
 		for(var i = 0; i < transform.childCount; i++) {
 			transform.GetChild(i).GetComponent<Button>().interactable = flag;
 		}
 		if (flag) {
-			EventSystem.current.SetSelectedGameObject (firstSelect.gameObject);
+			EventSystem.current.SetSelectedGameObject (firstButton.gameObject);
 		}
 	}
 
@@ -217,6 +217,6 @@ public class Itemcountermp : MonoBehaviour {
 		SceneManager.LoadScene ("StatusItemHP");
 	}
 	public void forcusbutton(){
-		firstSelect.Select ();
+		firstButton.Select ();
 	}
 }

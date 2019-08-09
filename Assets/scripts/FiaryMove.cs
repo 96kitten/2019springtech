@@ -14,8 +14,10 @@ public class FiaryMove : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Fairymove = GetComponent<Animator> ();
-		this.gameObject.transform.position = StatusManager.instance.playerpos;
-		this.gameObject.transform.rotation = StatusManager.instance.playerrote;
+		if (SceneManager.GetActiveScene ().name == "Main") {
+			this.gameObject.transform.position = StatusManager.instance.playerpos;
+			this.gameObject.transform.rotation = StatusManager.instance.playerrote;
+		}
 		moving = true;
 		ItemDestroyMain.instance.destitemM ();
 	}
