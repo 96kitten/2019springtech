@@ -588,6 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f389765015ad24d6f8129726d3c13b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstSelect: {fileID: 1474640669}
   Gtitle: {fileID: 1474640671}
   res: {fileID: 1566950284}
 --- !u!1 &1474640669
@@ -858,7 +859,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1474640669}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &1855986155

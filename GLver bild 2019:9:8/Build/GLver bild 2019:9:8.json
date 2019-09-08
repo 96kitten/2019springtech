@@ -1,0 +1,11 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "GLver bild 2019:9:8.data.unityweb",
+"asmCodeUrl": "GLver bild 2019:9:8.asm.code.unityweb",
+"asmMemoryUrl": "GLver bild 2019:9:8.asm.memory.unityweb",
+"asmFrameworkUrl": "GLver bild 2019:9:8.asm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
