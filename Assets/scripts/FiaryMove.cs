@@ -9,6 +9,7 @@ public class FiaryMove : MonoBehaviour {
 	int rotespeed= 2;
 	public bool moving;
 	private Animator Fairymove;
+	public MoveTown movetown;
 
 
 	// Use this for initialization
