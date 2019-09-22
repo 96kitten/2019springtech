@@ -12,17 +12,17 @@ EditorBuildSettings:
     path: Assets/Scene/Main.unity
     guid: 7985e2e1e128147929573c98b6e8bfa9
   - enabled: 1
-    path: Assets/Scene/Battlescene.unity
+    path: Assets/Scene/Battle/Battlescene.unity
     guid: 53626a6cc6cc442a8af78c21d92d82ad
   - enabled: 1
     path: Assets/Scene/FirstTownSce.unity
     guid: 61adb5eb96de145ab82349e81d83bff8
   - enabled: 1
-    path: Assets/Scene/StatusItemMP.unity
+    path: Assets/Scene/Battle/StatusItemMP.unity
     guid: 99bcde5f6a3c341039f7ae2508f554f0
-  - enabled: 1
-    path: Assets/Scene/StatusItemHP.unity
-    guid: c6ba8ba2deb0a40bfb24a2cf0841d932
   - enabled: 1
     path: Assets/Scene/HTP.unity
     guid: 6900d2f73785a4537b68b1f5b21fb136
+  - enabled: 1
+    path: Assets/Scene/Battle/StatusItemHP.unity
+    guid: c6ba8ba2deb0a40bfb24a2cf0841d932

@@ -48,6 +48,7 @@ public class enemymove : MonoBehaviour {
 				}
 				Quaternion targetRotation = Quaternion.LookRotation (targetPosition - transform.position);
 				transform.rotation = Quaternion.Slerp (transform.rotation, targetRotation, Time.deltaTime * rotationSmooth);
+				//transform.rotation = Quaternion.Euler (-90,transform.rotation.eulerAngles.y,0);
 				transform.Translate (Vector3.forward * speed * Time.deltaTime);
 			}
 		}

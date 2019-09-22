@@ -31,6 +31,7 @@ public class EnemyCon1sc : MonoBehaviour {
 		for (int i = 0; i < Count1e; i++) {
 			GameObject enemy = Instantiate(Enemy1) as GameObject;
 			enemy.transform.position = new Vector3(Random.Range(-129,23),0.5f, Random.Range(-118,8));
+			enemy.transform.rotation = Quaternion.Euler (-90,0,0);
 		}
 		for (int i = 0; i < Count2e; i++) {
 			GameObject enemy2 = Instantiate(Enemy2) as GameObject;
