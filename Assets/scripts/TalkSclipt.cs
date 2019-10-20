@@ -20,10 +20,12 @@ public class TalkSclipt : MonoBehaviour {
 		if (other.gameObject.tag == "Townp") {
 			if (other.gameObject.name == "TownLady") {
 				if(GameManager.instance.FtownL == false){
-					talk.text = "こんにちは、貴女マオーを倒しに行くの？じゃあ、これあげるわ。";
+					talk.text = "こんにちは、貴女マオーを倒しに行くの？じゃあ、これあげるわ。 スペースキーで貰う";
 				mwindow.SetActive (true);
+					if(Input.GetKey (KeyCode.Space)){
 					ItemManager.instance.mhpi2 += 1;
-				GameManager.instance.FtownL = true;
+				    GameManager.instance.FtownL = true;
+					}
 				}
 				if (GameManager.instance.FtownL == true) {
 					talk.text = "頑張ってね！";

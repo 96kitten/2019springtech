@@ -1745,7 +1745,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 917513970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18530273, y: 0.438385, z: 0}
+  m_LocalPosition: {x: -0.18530273, y: 0.44607544, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1602771303}
@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.015466406, g: 0, b: 0.44852942, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3199,7 +3199,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1602771302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.70007324, y: -120.04785, z: 0}
+  m_LocalPosition: {x: 0.70007324, y: -118.2337, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 917513971}
@@ -3326,7 +3326,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1606710236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 721, y: 335, z: 0}
+  m_LocalPosition: {x: 721, y: 330, z: 0}
   m_LocalScale: {x: 1.8025, y: 1.8025, z: 1.8025}
   m_Children:
   - {fileID: 1602771303}
@@ -3506,7 +3506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea86848e1484a42dcbe37cea59424a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy1: {fileID: 1619083750428682, guid: b47df5a4f7ada45b38d994e7aa9ee899, type: 2}
+  Enemy1: {fileID: 1487535088092816, guid: e6c3c38719eaa4ab58864518fd13f061, type: 2}
   Enemy2: {fileID: 1500286527845280, guid: 543f71814b81b46d3a321b8da2649de4, type: 2}
   Count1e: 0
   Count2e: 0

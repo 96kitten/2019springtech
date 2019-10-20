@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		enemy1count = PlayerPrefs.GetInt ("count1",7);
 		enemy2count = PlayerPrefs.GetInt ("count2",5);
-		FtownL = false;
 	}
 	
 	// Update is called once per frame

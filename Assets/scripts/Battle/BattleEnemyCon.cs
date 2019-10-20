@@ -10,6 +10,8 @@ public class BattleEnemyCon : MonoBehaviour {
 	GameObject enemy1;
 	GameObject enemy2;
 
+	GameObject baenemy;
+
 	public int EnemyHP;
 
 	public GameObject player;
@@ -18,18 +20,21 @@ public class BattleEnemyCon : MonoBehaviour {
 
 	public Slider HPgauge;
 
+	public Animator atanimation;
+
 	// Use this for initialization
 	void Start () {
-		enemy1 = (GameObject)Resources.Load ("Prefabs/Enemy");
+		enemy1 = (GameObject)Resources.Load ("Prefabs/Enemy1wolf");
 		enemy2 = (GameObject)Resources.Load ("Prefabs/Enemy2");
 		if (GameManager.instance.battleEnemyID == 1) {
 			EnemyHP = 13;
-			Instantiate (enemy1, new Vector3(4,0.5f,-3), Quaternion.identity);
+			baenemy = Instantiate (enemy1, new Vector3(4,0.5f,-3), Quaternion.identity);
 		}
 		if (GameManager.instance.battleEnemyID == 2) {
 			EnemyHP = 30;
-			Instantiate (enemy2, new Vector3(4,0.5f,-3), Quaternion.identity);
+		    baenemy = Instantiate (enemy2, new Vector3(4,0.5f,-3), Quaternion.identity);
 		}
+		atanimation = baenemy.GetComponent<Animator> ();
 		HPgauge.maxValue = EnemyHP;
 		HPgauge.value = EnemyHP;
 	}
@@ -41,16 +46,18 @@ public class BattleEnemyCon : MonoBehaviour {
 	public void Eneturn(){
 
 		if (GameManager.instance.battleEnemyID == 1) {
-			StartCoroutine (EnemyAttack (2f, Random.Range (2, 6),Enpar1));
+			StartCoroutine (EnemyAttack (2f, Random.Range (2, 4)));
 		}
 		if (GameManager.instance.battleEnemyID == 2) {
-			StartCoroutine (EnemyAttack (2f, Random.Range (4, 8),Enpar1));
+			StartCoroutine (EnemyAttack (2f, Random.Range (4, 6)));
 		}
 	}
-	private IEnumerator EnemyAttack(float time,int damage,ParticleSystem atk){
+	private IEnumerator EnemyAttack(float time,int damage){
 		EnemyHP -= playerBattle.AttackDamage;
 		HPgauge.value = EnemyHP;
 		if (EnemyHP <= 0) {
+			atanimation.SetBool ("enlose", true);
+			yield return new WaitForSeconds (time);
 			if (GameManager.instance.battleEnemyID == 1) {
 				GameManager.instance.enemy1count -= 1;
 				GameManager.instance.Senemyscounter ();
@@ -62,10 +69,9 @@ public class BattleEnemyCon : MonoBehaviour {
 			playerBattle.winner ();
 		}
 		if (EnemyHP > 0) {
-			atk.Play ();
+			atanimation.SetBool ("enattack", true);
 			yield return new WaitForSeconds (time);
-			atk.Stop ();
-			yield return new WaitForSeconds (time);
+			atanimation.SetBool ("enattack", false);
 			playerBattle.FairyHP -= damage;
 			//turnをtrueに
 			playerBattle.turn = true;
