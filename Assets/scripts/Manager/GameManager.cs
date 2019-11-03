@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour {
 	public int battleEnemyID;
 	public int enemy1count;
 	public int enemy2count;
+	public int bosscount;
 
-	public bool FtownL;
+	public int FtownL;
 
 	void Awake(){
 		if (instance == null) {
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		enemy1count = PlayerPrefs.GetInt ("count1",7);
 		enemy2count = PlayerPrefs.GetInt ("count2",5);
+		bosscount = PlayerPrefs.GetInt ("Bcount",1);
+		FtownL = PlayerPrefs.GetInt ("town1ta", 0);
 	}
 	
 	// Update is called once per frame
@@ -35,11 +38,22 @@ public class GameManager : MonoBehaviour {
 	public void Senemyscounter(){
 		PlayerPrefs.SetInt ("count1", enemy1count);
 		PlayerPrefs.SetInt ("count2", enemy2count);
+		PlayerPrefs.SetInt ("Bcount",bosscount);
 		PlayerPrefs.Save ();
 	}
 
 	public void Lenemyscounter(){
 		enemy1count = PlayerPrefs.GetInt ("count1",7);
 		enemy2count = PlayerPrefs.GetInt ("count2",5);
+		bosscount = PlayerPrefs.GetInt ("Bcount",1);
+	}
+
+	public void FiTown(){
+		PlayerPrefs.SetInt ("town1ta", FtownL);
+		PlayerPrefs.Save ();
+	}
+
+	public void FiTownL(){
+		FtownL = PlayerPrefs.GetInt ("town1ta", 0);
 	}
 }

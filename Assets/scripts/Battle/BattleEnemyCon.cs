@@ -25,14 +25,14 @@ public class BattleEnemyCon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		enemy1 = (GameObject)Resources.Load ("Prefabs/Enemy1wolf");
-		enemy2 = (GameObject)Resources.Load ("Prefabs/Enemy2");
+		enemy2 = (GameObject)Resources.Load ("Prefabs/Enemy2gob");
 		if (GameManager.instance.battleEnemyID == 1) {
 			EnemyHP = 13;
 			baenemy = Instantiate (enemy1, new Vector3(4,0.5f,-3), Quaternion.identity);
 		}
 		if (GameManager.instance.battleEnemyID == 2) {
 			EnemyHP = 30;
-		    baenemy = Instantiate (enemy2, new Vector3(4,0.5f,-3), Quaternion.identity);
+		    baenemy = Instantiate (enemy2, new Vector3(4,0,-3), Quaternion.identity);
 		}
 		atanimation = baenemy.GetComponent<Animator> ();
 		HPgauge.maxValue = EnemyHP;

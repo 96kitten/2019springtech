@@ -66,6 +66,16 @@ public class MoveTown : MonoBehaviour {
 				SceneManager.LoadScene ("FirstTownSce");
 			}
 		}
+		if (other.gameObject.name == "catsle") {
+			serif.text = "王家の城　跡地";
+			Log.SetActive (true);
+			if (Input.GetKey (KeyCode.Space)) {
+				Log.SetActive (false);
+				StatusManager.instance.playerpos = this.gameObject.transform.position;
+				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
+				SceneManager.LoadScene ("BossScene");
+			}
+		}
 		if (other.gameObject.tag == "hpluss" || other.gameObject.tag == "mpluss") {
 			if (other.gameObject.tag == "hpluss" && ItemDestroyMain.instance.hi1 == true) {
 				serif.text = "柔らかな力を感じる";

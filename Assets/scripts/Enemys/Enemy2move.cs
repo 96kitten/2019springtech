@@ -17,6 +17,8 @@ public class Enemy2move : MonoBehaviour {
 
 	private Transform player;
 
+	public Animator GobAnimate;
+
 	void Start () {
 		search = false;
 		targetPosition = GetRandomPositionOnLevel();
@@ -24,12 +26,15 @@ public class Enemy2move : MonoBehaviour {
 			targetPosition = GetRandomPositionOnLevel();
 			player = GameObject.FindWithTag ("Player").transform;
 		}
+		GobAnimate = GetComponent<Animator> ();
 	}
 
 	void Update () {
 		if (SceneManager.GetActiveScene ().name == "Main") {
 			//徘徊するやつ http://blog.uzutaka.com/entry/2015/10/14/031633 より
 			if (search == true) {
+				GobAnimate.SetBool ("rungob", true);
+				speed = 5;
 				//Vector3 direction = player.transform.position - transform.position;
 				//Quaternion toRotation = Quaternion.FromToRotation(transform.forward, direction);
 				//transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, speed * Time.deltaTime);
@@ -42,6 +47,9 @@ public class Enemy2move : MonoBehaviour {
 				transform.Translate (Vector3.forward * speed * Time.deltaTime);
 			}
 			if (search == false) {
+				GobAnimate.SetBool ("rungob", false);
+				GobAnimate.SetBool ("walkgob", true);
+				speed = 3;
 				float sqrDistanceToTarget = Vector3.SqrMagnitude (transform.position - targetPosition);
 				if (sqrDistanceToTarget < changeTargetSqrDistance) {
 					targetPosition = GetRandomPositionOnLevel ();
