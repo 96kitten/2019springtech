@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class BossBattlePlayer : MonoBehaviour {
-	public BattleEnemyCon battleenemy;
+	public BossBattleSystem battleeboss;
 
 	//ステータス
 	public int FairyHP;
@@ -58,8 +58,6 @@ public class BossBattlePlayer : MonoBehaviour {
 
 	public Button AttackB;
 
-	public Button RunB;
-
 	public GameObject BackGround;
 
 	public Button majic1;
@@ -75,9 +73,7 @@ public class BossBattlePlayer : MonoBehaviour {
 	void Start () {
 		currentState = state.Wait;
 		AttackB.interactable = true;
-		RunB.interactable = true;
 		AttackB.onClick.AddListener (Attack);
-		RunB.onClick.AddListener (Run);
 		BackB.onClick.AddListener (Back);
 		majic1.onClick.AddListener (Majic1);
 		majic2.onClick.AddListener (Majic2);
@@ -103,34 +99,23 @@ public class BossBattlePlayer : MonoBehaviour {
 	public void ButtonOn(){
 		FHP.text = FairyHP.ToString();
 		AttackB.interactable = true;
-		RunB.interactable = true;
 		EventSystem.current.SetSelectedGameObject (firstSelect);
 	}
 
 	public void ButtonOff(){
 		AttackB.interactable = false;
-		RunB.interactable = false;
 	}
 
 	public void Attack(){
 		currentState = state.Attack;
 		AttackB.interactable = false;
-		RunB.interactable = false;
 		BackGround.SetActive (true);
 		EventSystem.current.SetSelectedGameObject (secoundSelect);
 		ButtonOff ();
 	}
-	public void Run(){
-		currentState = state.Run;
-		StatusManager.instance.PlayerHP = FairyHP;
-		StatusManager.instance.PlayerMP = FairyMP;
-		StatusManager.instance.Status ();
-		SceneManager.LoadScene ("Main");
-	}
 	public void Back(){
 		BackGround.SetActive (false);
 		AttackB.interactable = true;
-		RunB.interactable = true;
 		EventSystem.current.SetSelectedGameObject (firstSelect);
 	}
 
@@ -169,7 +154,7 @@ public class BossBattlePlayer : MonoBehaviour {
 			par.Stop ();
 			AttackDamage = Damage;
 			//BattleEnemyConのEneturn呼び出し
-			battleenemy.Eneturn ();
+			battleeboss.Eneturn ();
 		}
 	}
 

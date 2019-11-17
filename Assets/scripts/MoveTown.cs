@@ -119,18 +119,6 @@ public class MoveTown : MonoBehaviour {
 						Log.SetActive (false);
 						ItemDestroyMain.instance.hi2 = false;
 					}
-					if (other.gameObject.name == "3HPitem2" && ItemDestroyMain.instance.hi5 == true) {
-						serif.text = "暖かな力を感じる";
-						Log.SetActive (true);
-						if (Input.GetKey (KeyCode.Space)) {
-							ItemManager.instance.ItemLoad ();
-							ItemManager.instance.mhpi2 += 1;
-							ItemManager.instance.ItemGet ();
-							Destroy (other.gameObject);
-							Log.SetActive (false);
-							ItemDestroyMain.instance.hi5 = false;
-						}
-					}
 				}
 				if (other.gameObject.tag == "mplusm" && ItemDestroyMain.instance.mi2 == true) {
 					serif.text = "暖かな力を感じる";
@@ -164,7 +152,7 @@ public class MoveTown : MonoBehaviour {
 				}
 			}
 			if (other.gameObject.tag == "mplusl") {
-				if (other.gameObject.name == "HPitem3" && ItemDestroyMain.instance.mi3 == true) {
+				if (other.gameObject.name == "MPitem3" && ItemDestroyMain.instance.mi3 == true) {
 					serif.text = "心地のいい力を感じる";
 					Log.SetActive (true);
 					if (Input.GetKey (KeyCode.Space)) {
@@ -178,7 +166,7 @@ public class MoveTown : MonoBehaviour {
 				}
 			}
 			if (other.gameObject.tag == "mplusl") {
-				if (other.gameObject.name == "2HPitem3" && ItemDestroyMain.instance.mi6 == true) {
+				if (other.gameObject.name == "2MPitem3" && ItemDestroyMain.instance.mi6 == true) {
 					serif.text = "心地のいい力を感じる";
 					Log.SetActive (true);
 					if (Input.GetKey (KeyCode.Space)) {
@@ -192,7 +180,7 @@ public class MoveTown : MonoBehaviour {
 				}
 			}
 			if (other.gameObject.tag == "mplusl") {
-				if (other.gameObject.name == "3HPitem3" && ItemDestroyMain.instance.mi7 == true) {
+				if (other.gameObject.name == "3MPitem3" && ItemDestroyMain.instance.mi7 == true) {
 					serif.text = "心地のいい力を感じる";
 					Log.SetActive (true);
 					if (Input.GetKey (KeyCode.Space)) {

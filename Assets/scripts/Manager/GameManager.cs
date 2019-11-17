@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 	public int battleEnemyID;
 	public int enemy1count;
 	public int enemy2count;
+	public int enemy3count;
+	public int enemy4count;
 	public int bosscount;
 
 	public int FtownL;
@@ -26,6 +28,8 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		enemy1count = PlayerPrefs.GetInt ("count1",7);
 		enemy2count = PlayerPrefs.GetInt ("count2",5);
+		enemy3count = PlayerPrefs.GetInt ("count3",3);
+		enemy4count = PlayerPrefs.GetInt ("count4",6);
 		bosscount = PlayerPrefs.GetInt ("Bcount",1);
 		FtownL = PlayerPrefs.GetInt ("town1ta", 0);
 	}
@@ -38,6 +42,8 @@ public class GameManager : MonoBehaviour {
 	public void Senemyscounter(){
 		PlayerPrefs.SetInt ("count1", enemy1count);
 		PlayerPrefs.SetInt ("count2", enemy2count);
+		PlayerPrefs.SetInt ("count3", enemy3count);
+		PlayerPrefs.SetInt ("count4", enemy4count);
 		PlayerPrefs.SetInt ("Bcount",bosscount);
 		PlayerPrefs.Save ();
 	}
@@ -45,6 +51,8 @@ public class GameManager : MonoBehaviour {
 	public void Lenemyscounter(){
 		enemy1count = PlayerPrefs.GetInt ("count1",7);
 		enemy2count = PlayerPrefs.GetInt ("count2",5);
+		enemy3count = PlayerPrefs.GetInt ("count3",3);
+		enemy4count = PlayerPrefs.GetInt ("count4",6);
 		bosscount = PlayerPrefs.GetInt ("Bcount",1);
 	}
 

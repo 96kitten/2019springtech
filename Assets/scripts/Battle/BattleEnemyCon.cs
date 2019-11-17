@@ -9,6 +9,8 @@ public class BattleEnemyCon : MonoBehaviour {
 
 	GameObject enemy1;
 	GameObject enemy2;
+	GameObject enemy3;
+	GameObject enemy4;
 
 	GameObject baenemy;
 
@@ -26,6 +28,8 @@ public class BattleEnemyCon : MonoBehaviour {
 	void Start () {
 		enemy1 = (GameObject)Resources.Load ("Prefabs/Enemy1wolf");
 		enemy2 = (GameObject)Resources.Load ("Prefabs/Enemy2gob");
+		enemy3 = (GameObject)Resources.Load ("Prefabs/Enemy3Troll");
+		enemy4 = (GameObject)Resources.Load ("Prefabs/Enemy4Hgob");
 		if (GameManager.instance.battleEnemyID == 1) {
 			EnemyHP = 13;
 			baenemy = Instantiate (enemy1, new Vector3(4,0.5f,-3), Quaternion.identity);
@@ -33,6 +37,14 @@ public class BattleEnemyCon : MonoBehaviour {
 		if (GameManager.instance.battleEnemyID == 2) {
 			EnemyHP = 30;
 		    baenemy = Instantiate (enemy2, new Vector3(4,0,-3), Quaternion.identity);
+		}
+		if (GameManager.instance.battleEnemyID == 3) {
+			EnemyHP = 100;
+			baenemy = Instantiate (enemy3, new Vector3(4,0,-3), Quaternion.identity);
+		}
+		if (GameManager.instance.battleEnemyID == 4) {
+			EnemyHP = 50;
+			baenemy = Instantiate (enemy4, new Vector3(4,0,-3), Quaternion.identity);
 		}
 		atanimation = baenemy.GetComponent<Animator> ();
 		HPgauge.maxValue = EnemyHP;
@@ -46,10 +58,16 @@ public class BattleEnemyCon : MonoBehaviour {
 	public void Eneturn(){
 
 		if (GameManager.instance.battleEnemyID == 1) {
-			StartCoroutine (EnemyAttack (2f, Random.Range (2, 4)));
+			StartCoroutine (EnemyAttack (2f, Random.Range (3, 5)));
 		}
 		if (GameManager.instance.battleEnemyID == 2) {
-			StartCoroutine (EnemyAttack (2f, Random.Range (4, 6)));
+			StartCoroutine (EnemyAttack (2f, Random.Range (6, 8)));
+		}
+		if (GameManager.instance.battleEnemyID == 3) {
+			StartCoroutine (EnemyAttack (2f, Random.Range (10, 17)));
+		}
+		if (GameManager.instance.battleEnemyID == 4) {
+			StartCoroutine (EnemyAttack (2f, Random.Range (8, 13)));
 		}
 	}
 	private IEnumerator EnemyAttack(float time,int damage){
@@ -64,6 +82,14 @@ public class BattleEnemyCon : MonoBehaviour {
 			}
 			if (GameManager.instance.battleEnemyID == 2) {
 				GameManager.instance.enemy2count -= 1;
+				GameManager.instance.Senemyscounter ();
+			}
+			if (GameManager.instance.battleEnemyID == 3) {
+				GameManager.instance.enemy3count -= 1;
+				GameManager.instance.Senemyscounter ();
+			}
+			if (GameManager.instance.battleEnemyID == 4) {
+				GameManager.instance.enemy4count -= 1;
 				GameManager.instance.Senemyscounter ();
 			}
 			playerBattle.winner ();

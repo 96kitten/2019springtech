@@ -66,6 +66,18 @@ public class FiaryMove : MonoBehaviour {
 			GameManager.instance.battleEnemyID = 2;
 			SceneManager.LoadScene ("Battlescene");
 		}
+		if (other.gameObject.tag == "enemy3") {
+			StatusManager.instance.playerpos = this.gameObject.transform.position;
+			StatusManager.instance.playerrote = this.gameObject.transform.rotation;
+			GameManager.instance.battleEnemyID = 3;
+			SceneManager.LoadScene ("Battlescene");
+		}
+		if (other.gameObject.tag == "Enemy4") {
+			StatusManager.instance.playerpos = this.gameObject.transform.position;
+			StatusManager.instance.playerrote = this.gameObject.transform.rotation;
+			GameManager.instance.battleEnemyID = 4;
+			SceneManager.LoadScene ("Battlescene");
+		}
 	}
 		
 }

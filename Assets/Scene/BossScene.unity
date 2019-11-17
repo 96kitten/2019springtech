@@ -5093,6 +5093,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &713571278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 713571271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2228eff4877415495128b8e56fe549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Log: {fileID: 125185074}
+  serif: {fileID: 1481919568}
 --- !u!1001 &767218222
 Prefab:
   m_ObjectHideFlags: 0

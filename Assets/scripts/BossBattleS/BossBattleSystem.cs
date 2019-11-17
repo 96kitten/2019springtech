@@ -9,7 +9,7 @@ public class BossBattleSystem : MonoBehaviour {
 
 	public GameObject player;
 
-	public PlayerBattle playerBattle;
+	public BossBattlePlayer playerBoss;
 
 	public Slider HPgauge;
 
@@ -17,6 +17,7 @@ public class BossBattleSystem : MonoBehaviour {
 
 	void Start () {
 		atanimation = this.GetComponent<Animator> ();
+		EnemyHP = 500;
 		HPgauge.maxValue = EnemyHP;
 		HPgauge.value = EnemyHP;
 	}
@@ -30,23 +31,23 @@ public class BossBattleSystem : MonoBehaviour {
 	}
 
 	private IEnumerator EnemyAttack(float time,int damage){
-		EnemyHP -= playerBattle.AttackDamage;
+		EnemyHP -= playerBoss.AttackDamage;
 		HPgauge.value = EnemyHP;
 		if (EnemyHP <= 0) {
 			atanimation.SetBool ("enlose", true);
 			yield return new WaitForSeconds (time);
 				GameManager.instance.enemy2count -= 1;
 				GameManager.instance.Senemyscounter ();
-			playerBattle.winner ();
+			playerBoss.winner ();
 		}
 		if (EnemyHP > 0) {
 			atanimation.SetBool ("enattack", true);
 			yield return new WaitForSeconds (time);
 			atanimation.SetBool ("enattack", false);
-			playerBattle.FairyHP -= damage;
+			playerBoss.FairyHP -= damage;
 			//turnをtrueに
-			playerBattle.turn = true;
-			playerBattle.ButtonOn ();
+			playerBoss.turn = true;
+			playerBoss.ButtonOn ();
 		}
 	}
 }
