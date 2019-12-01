@@ -6,29 +6,32 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scene/Title.unity
+    path: Assets/Scene/introduction/Title.unity
     guid: 60839a30631444fc499484910b76bce4
   - enabled: 1
-    path: Assets/Scene/Main.unity
+    path: Assets/Scene/introduction/Main.unity
     guid: 7985e2e1e128147929573c98b6e8bfa9
   - enabled: 1
     path: Assets/Scene/Battle/Battlescene.unity
     guid: 53626a6cc6cc442a8af78c21d92d82ad
   - enabled: 1
-    path: Assets/Scene/FirstTownSce.unity
+    path: Assets/Scene/Towns/FirstTownSce.unity
     guid: 61adb5eb96de145ab82349e81d83bff8
   - enabled: 1
     path: Assets/Scene/Battle/StatusItemMP.unity
     guid: 99bcde5f6a3c341039f7ae2508f554f0
   - enabled: 1
-    path: Assets/Scene/HTP.unity
+    path: Assets/Scene/introduction/HTP.unity
     guid: 6900d2f73785a4537b68b1f5b21fb136
   - enabled: 1
     path: Assets/Scene/Battle/StatusItemHP.unity
     guid: c6ba8ba2deb0a40bfb24a2cf0841d932
   - enabled: 1
-    path: Assets/Scene/BossScene.unity
+    path: Assets/Scene/Towns/BossScene.unity
     guid: a961bd1cf4b604803811fdbcc058eb94
   - enabled: 1
     path: Assets/Scene/Battle/BossBattle.unity
     guid: 6030a7017170f4b3bb34a5726961ca8a
+  - enabled: 1
+    path: Assets/Scene/Towns/Liblarytown.unity
+    guid: f5212e3d47a39407aae79dafd00503ab

@@ -10,6 +10,8 @@ public class BossEncount : MonoBehaviour {
 	public GameObject Log;
 	public Text serif;
 
+	public float Timer = 0;
+
 	// Use this for initialization
 	void Start () {
 		talking[0] = "あ";
@@ -21,13 +23,20 @@ public class BossEncount : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Timer -= Time.deltaTime;
+		if(Timer <= 0){
+			Timer = 0;
+		}
 		if (Input.GetKeyUp (KeyCode.Space)) {
+			if(Timer <= 0){
 			if (talk <= 4) {
 				talk += 1;
+				Timer = 1;
 			}
 			if (talk == 5) {
 					SceneManager.LoadScene ("BossBattle");
 			}
+		}
 		}
 	}
 
@@ -54,4 +63,5 @@ public class BossEncount : MonoBehaviour {
 		Log.SetActive (false);
 		talk = 0;
 	}
+		
 }

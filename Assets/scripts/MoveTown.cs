@@ -49,7 +49,7 @@ public class MoveTown : MonoBehaviour {
 			}
 		}
 		if (other.gameObject.tag == "backtotown") {
-			serif.text = "ここが村の出口だ";
+			serif.text = "ここが出口だ";
 			Log.SetActive (true);
 			if (Input.GetKey (KeyCode.Space)) {
 				Log.SetActive (false);
@@ -74,6 +74,16 @@ public class MoveTown : MonoBehaviour {
 				StatusManager.instance.playerpos = this.gameObject.transform.position;
 				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
 				SceneManager.LoadScene ("BossScene");
+			}
+		}
+		if (other.gameObject.name == "Library"){
+			serif.text = "グレースライブラリ";
+			Log.SetActive (true);
+			if (Input.GetKey (KeyCode.Space)) {
+				Log.SetActive (false);
+				StatusManager.instance.playerpos = this.gameObject.transform.position;
+				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
+				SceneManager.LoadScene ("Liblarytown");
 			}
 		}
 		if (other.gameObject.tag == "hpluss" || other.gameObject.tag == "mpluss") {
