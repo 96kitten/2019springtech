@@ -160,20 +160,6 @@ public class MoveTown : MonoBehaviour {
 						ItemDestroyMain.instance.hi2 = false;
 					}
 				}
-				if (other.gameObject.tag == "mplusm" && ItemDestroyMain.instance.mi2 == true) {
-					serif.text = "暖かな力を感じる";
-					Log.SetActive (true);
-					if (Input.GetKey (KeyCode.Space)) {
-						ItemManager.instance.ItemLoad ();
-						ItemManager.instance.mmpi2 += 1;
-						ItemManager.instance.ItemGet ();
-						Destroy (other.gameObject);
-						Log.SetActive (false);
-						if (other.gameObject.name == "MPitem2") {
-							ItemDestroyMain.instance.mi2 = false;
-						}
-					}
-				}
 			}
 		}
 		if (other.gameObject.tag == "hplusl" || other.gameObject.tag == "mplusl") {
@@ -216,20 +202,6 @@ public class MoveTown : MonoBehaviour {
 						Destroy (other.gameObject);
 						Log.SetActive (false);
 						ItemDestroyMain.instance.mi6 = false;
-					}
-				}
-			}
-			if (other.gameObject.tag == "mplusl") {
-				if (other.gameObject.name == "3MPitem3" && ItemDestroyMain.instance.mi7 == true) {
-					serif.text = "心地のいい力を感じる";
-					Log.SetActive (true);
-					if (Input.GetKey (KeyCode.Space)) {
-						ItemManager.instance.ItemLoad ();
-						ItemManager.instance.mmpi3 += 1;
-						ItemManager.instance.ItemGet ();
-						Destroy (other.gameObject);
-						Log.SetActive (false);
-						ItemDestroyMain.instance.mi7 = false;
 					}
 				}
 			}
