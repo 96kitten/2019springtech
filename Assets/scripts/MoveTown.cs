@@ -57,7 +57,7 @@ public class MoveTown : MonoBehaviour {
 			}
 		}
 		if (other.gameObject.tag == "First") {
-			serif.text = "ストァーフの村 緑が多くてのどやかな場所";
+			serif.text = "ストァーフの村";
 			Log.SetActive (true);
 			if (Input.GetKey (KeyCode.Space)) {
 				Log.SetActive (false);
@@ -84,6 +84,36 @@ public class MoveTown : MonoBehaviour {
 				StatusManager.instance.playerpos = this.gameObject.transform.position;
 				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
 				SceneManager.LoadScene ("Liblarytown");
+			}
+		}
+		if (other.gameObject.name == "Mounta"){
+			serif.text = "山岳商店";
+			Log.SetActive (true);
+			if (Input.GetKey (KeyCode.Space)) {
+				Log.SetActive (false);
+				StatusManager.instance.playerpos = this.gameObject.transform.position;
+				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
+				SceneManager.LoadScene ("MountainTown");
+			}
+		}
+		if (other.gameObject.name == "SeaSide"){
+			serif.text = "サイドシーング街";
+			Log.SetActive (true);
+			if (Input.GetKey (KeyCode.Space)) {
+				Log.SetActive (false);
+				StatusManager.instance.playerpos = this.gameObject.transform.position;
+				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
+				SceneManager.LoadScene ("SeaSideTown");
+			}
+		}
+		if (other.gameObject.name == "Brokent"){
+			serif.text = "ラートスの村";
+			Log.SetActive (true);
+			if (Input.GetKey (KeyCode.Space)) {
+				Log.SetActive (false);
+				StatusManager.instance.playerpos = this.gameObject.transform.position;
+				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
+				SceneManager.LoadScene ("Brokentown");
 			}
 		}
 		if (other.gameObject.tag == "hpluss" || other.gameObject.tag == "mpluss") {
@@ -259,5 +289,9 @@ public class MoveTown : MonoBehaviour {
 		Log.SetActive (false);
 		rcount = 0;
 
+	}
+
+	void OnCollisionExit(Collision other){
+		Log.SetActive (false);
 	}
 }

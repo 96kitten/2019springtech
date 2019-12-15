@@ -334,7 +334,6 @@ GameObject:
   - component: {fileID: 4082304297476652}
   - component: {fileID: 135278531324081064}
   - component: {fileID: 54839571929732024}
-  - component: {fileID: 114909391990254644}
   - component: {fileID: 65007207835013456}
   - component: {fileID: 95611378816612468}
   - component: {fileID: 114769939904001496}
@@ -1939,19 +1938,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   search: 0
   WMoveAnimate: {fileID: 0}
---- !u!114 &114909391990254644
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1293469391758036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 661595340e84ef64b9c28096a9dcafed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AddRunSpeed: 1
-  AddWalkSpeed: 0.7
 --- !u!135 &135278531324081064
 SphereCollider:
   m_ObjectHideFlags: 1

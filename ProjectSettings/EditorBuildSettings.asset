@@ -30,8 +30,17 @@ EditorBuildSettings:
     path: Assets/Scene/Towns/BossScene.unity
     guid: a961bd1cf4b604803811fdbcc058eb94
   - enabled: 1
+    path: Assets/Scene/Towns/MountainTown.unity
+    guid: dd1814c9aab5c4d11b376b29146e3a15
+  - enabled: 1
+    path: Assets/Scene/Towns/Brokentown.unity
+    guid: 51ff107c34a5c44609ed260da63f080c
+  - enabled: 1
     path: Assets/Scene/Battle/BossBattle.unity
     guid: 6030a7017170f4b3bb34a5726961ca8a
+  - enabled: 1
+    path: Assets/Scene/Towns/SeaSideTown.unity
+    guid: eca5541bb175d479185579610447d27a
   - enabled: 1
     path: Assets/Scene/Towns/Liblarytown.unity
     guid: f5212e3d47a39407aae79dafd00503ab
