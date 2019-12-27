@@ -60,7 +60,7 @@ public class ItemDestroyMain : MonoBehaviour {
 		MI5 = GameObject.Find ("2MPitem4");
 		MI6 = GameObject.Find ("2MPitem3");
 		if (hi1 == 0) {
-			Destroy (HI1.gameObject);
+			Destroy (HI1);
 		}
 		if (hi2 == 0) {
 			Destroy (HI2);

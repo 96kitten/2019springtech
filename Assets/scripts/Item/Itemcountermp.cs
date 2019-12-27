@@ -63,8 +63,15 @@ public class Itemcountermp : MonoBehaviour {
 
 	bool mcounter = true;
 
+	public Text HGold;
+
+	public int MyGold;
+	public int HaveJem;
+
 	// Use this for initialization
 	void Start () {
+		GameManager.instance.LoadGold ();
+		MyGold = GameManager.instance.Gold;
 		StatusManager.instance.LoadMaxStatus ();
 		MaxMPcount = StatusManager.instance.MAXMP;
 		MAXCounter.text = MaxMPcount.ToString ();
@@ -89,7 +96,11 @@ public class Itemcountermp : MonoBehaviour {
 		Sumple2.text = I2max.ToString ();
 		Sumple3.text = I3max.ToString ();
 		Sumple4.text = I4max.ToString ();
+		HGold.text = GameManager.instance.Gold.ToString();
 		mcounter = true;
+		HGold.text = MyGold.ToString();
+		HaveJem = I1count + I2count + I3count + I4count;
+		Counter.text = HaveJem.ToString ();
 	}
 	
 	// Update is called once per frame
@@ -104,6 +115,8 @@ public class Itemcountermp : MonoBehaviour {
 			if (plus == true) {
 				if (I1count < I1max) {
 					I1count += 1;
+					HaveJem = I1count + I2count + I3count + I4count;
+					Counter.text = HaveJem.ToString ();
 				}
 			}
 		}
@@ -111,6 +124,8 @@ public class Itemcountermp : MonoBehaviour {
 			if (I1count > 0) {
 				I1count -= 1;
 				mcounter = true;
+				HaveJem = I1count + I2count + I3count + I4count;
+				Counter.text = HaveJem.ToString ();
 			}
 		}
 		Item1cou.text = I1count.ToString ();
@@ -125,6 +140,8 @@ public class Itemcountermp : MonoBehaviour {
 				if (I2count < I2max) {
 					I2count += 1;
 					mcounter = true;
+					HaveJem = I1count + I2count + I3count + I4count;
+					Counter.text = HaveJem.ToString ();
 				}
 			}
 		}
@@ -132,6 +149,8 @@ public class Itemcountermp : MonoBehaviour {
 			if (I2count > 0) {
 				I2count -= 1;
 				mcounter = true;
+				HaveJem = I1count + I2count + I3count + I4count;
+				Counter.text = HaveJem.ToString ();
 			}
 		}
 		Item2cou.text = I2count.ToString ();
@@ -146,12 +165,16 @@ public class Itemcountermp : MonoBehaviour {
 				if (I3count < I3max) {
 					I3count += 1;
 					mcounter = true;
+					HaveJem = I1count + I2count + I3count + I4count;
+					Counter.text = HaveJem.ToString ();
 				}
 			}
 		}
 		if (plus3 == false) {
 			if (I3count > 0) {
 				I3count -= 1;
+				HaveJem = I1count + I2count + I3count + I4count;
+				Counter.text = HaveJem.ToString ();
 			}
 		}
 		Item3cou.text = I3count.ToString ();
@@ -165,12 +188,16 @@ public class Itemcountermp : MonoBehaviour {
 			if (plus4 == true) {
 				if (I4count < I4max) {
 					I4count += 1;
+					HaveJem = I1count + I2count + I3count + I4count;
+					Counter.text = HaveJem.ToString ();
 				}
 			}
 		}
 		if (plus4 == false) {
 			if (I4count > 0) {
 				I4count -= 1;
+				HaveJem = I1count + I2count + I3count + I4count;
+				Counter.text = HaveJem.ToString ();
 			}
 		}
 		Item4cou.text = I4count.ToString ();
@@ -195,7 +222,7 @@ public class Itemcountermp : MonoBehaviour {
 		ItemManager.instance.SaveItems ();
 		StatusManager.instance.MAXMP = 30 + change1 + change2 + change3 + change4;
 		StatusManager.instance.SaveMaxStatus ();
-		SceneManager.LoadScene ("Main");
+		SceneManager.LoadScene (StatusManager.instance.NSceNa);
 	}
 
 	public void movemp(){

@@ -58,19 +58,19 @@ public class BattleEnemyCon : MonoBehaviour {
 	public void Eneturn(){
 
 		if (GameManager.instance.battleEnemyID == 1) {
-			StartCoroutine (EnemyAttack (2f, Random.Range (3, 5)));
+			StartCoroutine (EnemyAttack (2f, Random.Range (3, 5),Random.Range(5,9)));
 		}
 		if (GameManager.instance.battleEnemyID == 2) {
-			StartCoroutine (EnemyAttack (2f, Random.Range (6, 8)));
+			StartCoroutine (EnemyAttack (2f, Random.Range (6, 8),Random.Range(10,17)));
 		}
 		if (GameManager.instance.battleEnemyID == 3) {
-			StartCoroutine (EnemyAttack (2f, Random.Range (10, 17)));
+			StartCoroutine (EnemyAttack (2f, Random.Range (10, 17),Random.Range(18,25)));
 		}
 		if (GameManager.instance.battleEnemyID == 4) {
-			StartCoroutine (EnemyAttack (2f, Random.Range (8, 13)));
+			StartCoroutine (EnemyAttack (2f, Random.Range (8, 13),Random.Range(26,35)));
 		}
 	}
-	private IEnumerator EnemyAttack(float time,int damage){
+	private IEnumerator EnemyAttack(float time,int damage,int getG){
 		EnemyHP -= playerBattle.AttackDamage;
 		HPgauge.value = EnemyHP;
 		if (EnemyHP <= 0) {
@@ -79,19 +79,28 @@ public class BattleEnemyCon : MonoBehaviour {
 			if (GameManager.instance.battleEnemyID == 1) {
 				GameManager.instance.enemy1count -= 1;
 				GameManager.instance.Senemyscounter ();
+				GameManager.instance.Gold += getG;
+				GameManager.instance.SaveGold ();
 			}
 			if (GameManager.instance.battleEnemyID == 2) {
 				GameManager.instance.enemy2count -= 1;
 				GameManager.instance.Senemyscounter ();
+				GameManager.instance.Gold += getG;
+				GameManager.instance.SaveGold ();
 			}
 			if (GameManager.instance.battleEnemyID == 3) {
 				GameManager.instance.enemy3count -= 1;
 				GameManager.instance.Senemyscounter ();
+				GameManager.instance.Gold += getG;
+				GameManager.instance.SaveGold ();
 			}
 			if (GameManager.instance.battleEnemyID == 4) {
 				GameManager.instance.enemy4count -= 1;
 				GameManager.instance.Senemyscounter ();
+				GameManager.instance.Gold += getG;
+				GameManager.instance.SaveGold ();
 			}
+			Debug.Log (GameManager.instance.Gold);
 			playerBattle.winner ();
 		}
 		if (EnemyHP > 0) {

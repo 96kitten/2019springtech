@@ -24,10 +24,21 @@ public class Reading : MonoBehaviour {
 		"＜グリーエグス＞　過度の魔力を一気に放出させることで爆破のような現象を引き起こす魔術",
 		"本はここで終わっている"};
 
+	string[] MajDic2 = {"＜シルフリカ＞　身体を活性化させ体力を回復する魔術　使用者の魔力量により効果が変化する",
+		"＜クロッカロッカー＞　対象の周囲に発生させた鉱石によって動きを止め衝撃を与える魔術",
+		"＜フェルペイズ＞　使用者の体力を魔力に変換し、元々の魔力とともに放出し衝撃を与える魔術",
+		"本はここで終わっている"
+	};
+
 	string[] JemDic = {"稀に世界に満ちている魔力が結晶化して出現する鉱石がある　その鉱石はジェムと呼ばれ使われている", 
 		"ジェムには身体能力を向上させる効果があり、特に魔力と体力に大きな影響が出ることが確認されている",
 		"ジェムは色によって効果が変わり、青色のものは魔力に、桃色のものは体力に影響が出る", 
 		"身体に及ぼす影響はジェムの形によっても変わり、基本的に大きくなるほどに影響も大きくなるとされている",
+		"本はここで終わっている"};
+
+	string[] HisBok ={"＜種族＞　この世界には人間の他に魔物、妖精などの種族が存在している。妖精は小さな体を持ち飛び回っている",
+		"＜魔力＞　魔力を操ることで魔術を用いることができる　魔力が充満している地点では魔力の補充を行うことも出来る",
+		"＜魔物＞　魔物を操ることのできる「マオー」という存在が存在するという伝承がこの世界に伝えられている",
 		"本はここで終わっている"};
 
 	void Start () {
@@ -52,7 +63,6 @@ public class Reading : MonoBehaviour {
 			if (Input.GetKeyUp (KeyCode.Space)) {
 				if (Timer <= 0) {
 					if (Bookread <= 2) {
-						Debug.Log (Bookread);
 						Bookread += 1;
 						talk.text = EneDic [Bookread];
 						Timer = 1;
@@ -91,12 +101,34 @@ public class Reading : MonoBehaviour {
 			}
 		}
 		if (other.gameObject.name == "majickdic2") {
-			talk.text = "高位魔術書";
-			mwindow.SetActive (true);
+			if(Bookread == -1){
+				talk.text = "高位魔術書";
+				mwindow.SetActive (true);
+			}
+			if (Input.GetKeyUp (KeyCode.Space)) {
+				if (Timer <= 0) {
+					if (Bookread <= 3) {
+						Bookread += 1;
+						talk.text = MajDic2 [Bookread];
+						Timer = 1;
+					}
+				}
+			}
 		}
 		if (other.gameObject.name == "history") {
-			talk.text = "伝承記録書";
-			mwindow.SetActive (true);
+			if (Bookread == -1) {
+				talk.text = "伝承記録書";
+				mwindow.SetActive (true);
+			}
+			if (Input.GetKeyUp (KeyCode.Space)) {
+				if (Timer <= 0) {
+					if (Bookread <= 3) {
+						Bookread += 1;
+						talk.text = HisBok [Bookread];
+						Timer = 1;
+					}
+				}
+			}
 		}
 		if (other.gameObject.name == "history2") {
 			if (Bookread == -1) {

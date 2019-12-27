@@ -12,9 +12,14 @@ public class StatusManager : MonoBehaviour {
 
 	public bool RestS;
 
+	public int ReMaj4 = 0;
+	public int ReMaj5 = 0;
+	public int ReMaj6 = 0;
 
 	public Vector3 playerpos;
 	public Quaternion playerrote;
+
+	public string NSceNa;
 
 	public static StatusManager instance;
 
@@ -33,6 +38,9 @@ public class StatusManager : MonoBehaviour {
 		PlayerMP = PlayerPrefs.GetInt ("MP", 30);
 		MAXHP = PlayerPrefs.GetInt ("MHP",20);
 		MAXMP = PlayerPrefs.GetInt ("MMP",30);
+		ReMaj4 = PlayerPrefs.GetInt ("RMajic4",0);
+		ReMaj5 = PlayerPrefs.GetInt ("RMajic5",0);
+		ReMaj6 = PlayerPrefs.GetInt ("RMajic6",0);
 		RestS = true;
 		playerpos = new Vector3 (33,1,-15);
 	}
@@ -72,4 +80,17 @@ public class StatusManager : MonoBehaviour {
 		PlayerPrefs.Save ();
 	}
 		
+	public void SaveUsemajic(){
+		PlayerPrefs.SetInt ("RMajic4",ReMaj4);
+		PlayerPrefs.SetInt ("RMajic5",ReMaj5);
+		PlayerPrefs.SetInt ("RMajic6",ReMaj6);
+		PlayerPrefs.Save ();
+	}
+
+	public void LoadUsemajic(){
+		ReMaj4 = PlayerPrefs.GetInt ("RMajic4",0);
+		ReMaj5 = PlayerPrefs.GetInt ("RMajic5",0);
+		ReMaj6 = PlayerPrefs.GetInt ("RMajic6",0);
+	}
+
 }

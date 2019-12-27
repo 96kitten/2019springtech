@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	public int enemy3count;
 	public int enemy4count;
 	public int bosscount;
+	public int Gold;
 
 	public int FtownL;
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour {
 		enemy4count = PlayerPrefs.GetInt ("count4",6);
 		bosscount = PlayerPrefs.GetInt ("Bcount",1);
 		FtownL = PlayerPrefs.GetInt ("town1ta", 0);
+		Gold = PlayerPrefs.GetInt ("GOLD",0);
 	}
 	
 	// Update is called once per frame
@@ -63,5 +65,14 @@ public class GameManager : MonoBehaviour {
 
 	public void FiTownL(){
 		FtownL = PlayerPrefs.GetInt ("town1ta", 0);
+	}
+
+	public void SaveGold(){
+		PlayerPrefs.SetInt ("GOLD",Gold);
+		PlayerPrefs.Save ();
+	}
+
+	public void LoadGold(){
+		Gold = PlayerPrefs.GetInt ("GOLD",0);
 	}
 }
