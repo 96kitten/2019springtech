@@ -91,6 +91,20 @@ public class TalkSclipt : MonoBehaviour {
 				mwindow.SetActive (true);
 			}
 		}
+
+		//いろんな会話
+		if (other.gameObject.name == "FTownLady") {
+			talk.text = "マオーが現れてからなんだか魔物が増えたらしいの  この村には影響はないみたいだけど";
+			mwindow.SetActive (true);
+		}
+		if (other.gameObject.name == "MTownLady") {
+			talk.text = "確か、小さいジェムでも数が多くなれば魔術の威力は上がるんだったよね";
+			mwindow.SetActive (true);
+		}
+		if (other.gameObject.name == "MTownLady2") {
+			talk.text = "大きいジェムばっかり付けてても、打たれ弱くなっちゃうなら考えものだよねえ";
+			mwindow.SetActive (true);
+		}
 	}
 
 	void OnTriggerExit(Collider other){
