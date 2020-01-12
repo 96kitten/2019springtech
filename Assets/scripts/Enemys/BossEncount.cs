@@ -14,11 +14,11 @@ public class BossEncount : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		talking[0] = "あ";
-		talking[1] = "い";
-		talking[2] = "う";
-		talking[3] = "え";
-		talking[4] = "お";
+		talking[0] = "これはこれは、小さな生き物がこんなところまで来たものだな";
+		talking[1] = "は、そんななりでこの我を打ち倒そうと？";
+		talking[2] = "勇気と無謀を履き違えたか？大層な心持ちのようだ";
+		talking[3] = "いい、ではその無謀さで我にかかって来てみせろ";
+		talking[4] = "その小さな体ごと叩きのめしてみせよう！";
 	}
 	
 	// Update is called once per frame

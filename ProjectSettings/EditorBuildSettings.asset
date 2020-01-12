@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scene/introduction/Title.unity
     guid: 60839a30631444fc499484910b76bce4
   - enabled: 1
+    path: Assets/Scene/introduction/OpeningMovie.unity
+    guid: 04052b67b9c0e49bf8fe46447d951c36
+  - enabled: 1
+    path: Assets/Scene/introduction/EndingMovie.unity
+    guid: 61ce2224007374e3099a4491394e7606
+  - enabled: 1
     path: Assets/Scene/introduction/Main.unity
     guid: 7985e2e1e128147929573c98b6e8bfa9
   - enabled: 1

@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemenberPart : MonoBehaviour {
-
-	public ParticleSystem Rem1;
-	public ParticleSystem Rem2;
-
-
+public class ShopLady : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -17,10 +12,5 @@ public class RemenberPart : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-	}
-
-	public void PartPlay(){
-		Rem1.Play ();
-		Rem2.Play ();
 	}
 }

@@ -41,6 +41,12 @@ public class Reading : MonoBehaviour {
 		"＜魔物＞　魔物を操ることのできる「マオー」という存在が存在するという伝承がこの世界に伝えられている",
 		"本はここで終わっている"};
 
+	string[] BoyNote = {"魔術使用に必要な魔力や魔術の威力のまとめ　　　　＜名前＞(必要魔力量)(推定威力)備考",
+		"＜リールストー＞(3)(5)目に入ったら痛そう　　　　＜ジェイムレーン＞(5)(12)頭に当たらないようにしたいな",
+		"＜グリーエグス＞(8)(21)爆風が無いのは不思議　　＜シルフリカ＞(10)(0)回復魔法はとても珍しいみたい",
+		"＜クロッカロッカー＞(13)(35)時間を止めたみたい ＜フェルペイズ＞(17)(42)倒れそうなときに使うのは厳禁",
+		"本はここで終わっている"};
+
 	void Start () {
 		mwindow.SetActive (false);
 		Bookread = -1;
@@ -140,6 +146,21 @@ public class Reading : MonoBehaviour {
 					if (Bookread <= 4) {
 						Bookread += 1;
 						talk.text = JemDic [Bookread];
+						Timer = 1;
+					}
+				}
+			}
+		}
+		if (other.gameObject.name == "MajicNote") {
+			if (Bookread == -1) {
+				talk.text = "魔術の記録　3";
+				mwindow.SetActive (true);
+			}
+			if (Input.GetKeyUp (KeyCode.Space)) {
+				if (Timer <= 0) {
+					if (Bookread <= 4) {
+						Bookread += 1;
+						talk.text = BoyNote [Bookread];
 						Timer = 1;
 					}
 				}

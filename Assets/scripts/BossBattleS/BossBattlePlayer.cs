@@ -263,6 +263,9 @@ public class BossBattlePlayer : MonoBehaviour {
 		StatusManager.instance.PlayerMP = FairyMP;
 		StatusManager.instance.Status ();
 		GameManager.instance.Gold += 300;
+		GameManager.instance.bosscount = 0;
+		GameManager.instance.Senemyscounter ();
+		GameManager.instance.SaveGold ();
 		SceneManager.LoadScene ("BossScene");
 	}
 }

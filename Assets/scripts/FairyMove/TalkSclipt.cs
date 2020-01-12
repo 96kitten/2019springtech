@@ -8,7 +8,7 @@ public class TalkSclipt : MonoBehaviour {
 	public Text talk;
 	public GameObject mwindow;
 
-	public RemenberPart remenbermaj;
+	//public RemenberPart remenbermaj;
 
 	//GameObject PartRe;
 	//RemenberPart script;
@@ -94,7 +94,17 @@ public class TalkSclipt : MonoBehaviour {
 
 		//いろんな会話
 		if (other.gameObject.name == "FTownLady") {
-			talk.text = "マオーが現れてからなんだか魔物が増えたらしいの  この村には影響はないみたいだけど";
+			if(GameManager.instance.bosscount == 1){
+			talk.text = "マオーが現れてからなんだか魔物が増えたらしいの。この村には影響はないみたいだけど";
+			mwindow.SetActive (true);
+			}
+			if(GameManager.instance.bosscount == 0){
+				talk.text = "マオーが倒れたんですってね。この村に何もなくてよかったわ！";
+				mwindow.SetActive (true);
+			}
+		}
+		if (other.gameObject.name == "FTownLady2") {
+			talk.text = "どこかの村には強い魔術を教えてくれる妖精がいるんだってね。私も教えてもらいたいなあ";
 			mwindow.SetActive (true);
 		}
 		if (other.gameObject.name == "MTownLady") {
@@ -113,9 +123,23 @@ public class TalkSclipt : MonoBehaviour {
 			talk.text = "わっわー！隠れてたのに見つかっちゃった！お姉ちゃんすごいね！";
 			mwindow.SetActive (true);
 		}
+		if (other.gameObject.name == "LFairy") {
+			talk.text = "椅子の上……？ああ、そう僕がまとめたノートです。魔術を使用するのに必要な魔力量などをまとめたんです。読んでくださっても構いませんよ";
+			mwindow.SetActive (true);
+		}
 		if (other.gameObject.name == "BTownLady") {
 			talk.text = "隣の家、前に魔物に襲われちゃってね……　この家もちょっとだけ壊れちゃったの";
 			mwindow.SetActive (true);
+		}
+		if (other.gameObject.name == "BTownLady2") {
+			if (GameManager.instance.bosscount == 1) {
+				talk.text = "あーあ、誰かマオーのこと倒してくれないかなあ……";
+				mwindow.SetActive (true);
+			}
+			if (GameManager.instance.bosscount == 0) {
+				talk.text = "ねえ、君がマオーを倒したんだろ！すごいなあ、ありがとうね！";
+				mwindow.SetActive (true);
+			}
 		}
 	}
 
