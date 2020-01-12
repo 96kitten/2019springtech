@@ -105,6 +105,18 @@ public class TalkSclipt : MonoBehaviour {
 			talk.text = "大きいジェムばっかり付けてても、打たれ弱くなっちゃうなら考えものだよねえ";
 			mwindow.SetActive (true);
 		}
+		if (other.gameObject.name == "STownLady") {
+			talk.text = "ここは魔物が来なくて平和だよね、まあ住んでる子も少ないんだけど";
+			mwindow.SetActive (true);
+		}
+		if (other.gameObject.name == "STownLady2") {
+			talk.text = "わっわー！隠れてたのに見つかっちゃった！お姉ちゃんすごいね！";
+			mwindow.SetActive (true);
+		}
+		if (other.gameObject.name == "BTownLady") {
+			talk.text = "隣の家、前に魔物に襲われちゃってね……　この家もちょっとだけ壊れちゃったの";
+			mwindow.SetActive (true);
+		}
 	}
 
 	void OnTriggerExit(Collider other){

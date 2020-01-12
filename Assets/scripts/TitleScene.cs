@@ -21,11 +21,13 @@ public class TitleScene : MonoBehaviour {
 
 	public Button gstart;
 	public Button htplay;
+	public Button reset;
 
 	// Use this for initialization
 	void Start () {
 		gstart.onClick.AddListener (movegame);
 		htplay.onClick.AddListener (moveplay);
+		reset.onClick.AddListener (GReset);
 	}
 	
 	// Update is called once per frame
@@ -39,5 +41,9 @@ public class TitleScene : MonoBehaviour {
 
 	public void moveplay(){
 		SceneManager.LoadScene ("HTP");
+	}
+
+	public void GReset(){
+		PlayerPrefs.DeleteAll ();
 	}
 }

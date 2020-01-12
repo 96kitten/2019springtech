@@ -100,7 +100,6 @@ public class BattleEnemyCon : MonoBehaviour {
 				GameManager.instance.Gold += getG;
 				GameManager.instance.SaveGold ();
 			}
-			Debug.Log (GameManager.instance.Gold);
 			playerBattle.winner ();
 		}
 		if (EnemyHP > 0) {

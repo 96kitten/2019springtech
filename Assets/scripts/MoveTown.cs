@@ -226,34 +226,6 @@ public class MoveTown : MonoBehaviour {
 						}
 					}
 				}
-				if (other.gameObject.tag == "mplusg") {
-					if (other.gameObject.name == "MPitem4" && ItemDestroyMain.instance.mi4 == 1)
-						serif.text = "途方も無い力を感じる";
-					Log.SetActive (true);
-					{
-						if (Input.GetKey (KeyCode.Space)) {
-							ItemManager.instance.ItemLoad ();
-							ItemManager.instance.mmpi4 += 1;
-							ItemManager.instance.ItemGet ();
-							Destroy (other.gameObject);
-							ItemDestroyMain.instance.mi4 = 0;
-							ItemDestroyMain.instance.Loaditemprefs ();
-						}
-					}
-					if (other.gameObject.name == "2MPitem4" && ItemDestroyMain.instance.mi5 == 1)
-						serif.text = "途方も無い力を感じる";
-					Log.SetActive (true);
-					{
-						if (Input.GetKey (KeyCode.Space)) {
-							ItemManager.instance.ItemLoad ();
-							ItemManager.instance.mmpi4 += 1;
-							ItemManager.instance.ItemGet ();
-							Destroy (other.gameObject);
-							ItemDestroyMain.instance.mi5 = 0;
-							ItemDestroyMain.instance.Loaditemprefs ();
-						}
-					}
-				}
 			}
 		}
 	}
