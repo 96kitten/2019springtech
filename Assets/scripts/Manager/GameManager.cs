@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
 		enemy4count = PlayerPrefs.GetInt ("count4",6);
 		bosscount = PlayerPrefs.GetInt ("Bcount",1);
 		FtownL = PlayerPrefs.GetInt ("town1ta", 0);
-		Gold = PlayerPrefs.GetInt ("GOLD",0);
+		Gold = PlayerPrefs.GetInt ("GOLD",20);
 	}
 	
 	// Update is called once per frame

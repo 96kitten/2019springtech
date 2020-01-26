@@ -520,7 +520,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HP + 1
+  m_Text: 
 --- !u!222 &97435351
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1496,7 +1496,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4  G
+  m_Text: 
 --- !u!222 &339899414
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1533,11 +1533,12 @@ RectTransform:
   - {fileID: 1479565791}
   - {fileID: 1093966509}
   - {fileID: 1288431536}
-  - {fileID: 380823064}
-  - {fileID: 1320551510}
   - {fileID: 1836711204}
   - {fileID: 1571498382}
   - {fileID: 2059106301}
+  - {fileID: 380823064}
+  - {fileID: 1971540409}
+  - {fileID: 1320551510}
   - {fileID: 1336277482}
   m_Father: {fileID: 1272947372}
   m_RootOrder: 0
@@ -1776,16 +1777,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 380823063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81.673164, y: -75.826225, z: 0}
+  m_LocalPosition: {x: 118.86206, y: -75.85723, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 353065827}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.46883607, y: 0.07764078}
+  m_AnchorMin: {x: 0.66, y: 0.07764078}
   m_AnchorMax: {x: 0.9518361, y: 0.22135924}
-  m_AnchoredPosition: {x: 0.20999908, y: -0.2999878}
-  m_SizeDelta: {x: -1.8099995, y: -1}
+  m_AnchoredPosition: {x: 0.37999725, y: -0.33099365}
+  m_SizeDelta: {x: -0.75, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &380823065
 MonoBehaviour:
@@ -1819,7 +1820,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GOLD
+  m_Text: 0
 --- !u!222 &380823066
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7008,7 +7009,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 899268615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0035591125, y: -68.84295, z: 0}
+  m_LocalPosition: {x: -0.0035591125, y: -68.842964, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1788667975}
@@ -7017,7 +7018,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.053000003, y: 0.08972019}
   m_AnchorMax: {x: 0.924839, y: 0.27527985}
-  m_AnchoredPosition: {x: 1.3560181, y: -0.41490173}
+  m_AnchoredPosition: {x: 1.3560181, y: -0.414917}
   m_SizeDelta: {x: 0.5805054, y: -1.5002823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &899268617
@@ -7743,8 +7744,9 @@ GameObject:
   - component: {fileID: 1093966512}
   - component: {fileID: 1093966511}
   - component: {fileID: 1093966510}
+  - component: {fileID: 1093966513}
   m_Layer: 5
-  m_Name: gem (1)
+  m_Name: gem2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7843,6 +7845,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1093966508}
+--- !u!114 &1093966513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093966508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1145270532}
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1098193919 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 113644, guid: 4ab3e1e137ad96e49927f44956a21394, type: 2}
@@ -8373,6 +8405,7 @@ MonoBehaviour:
   firstSelect: {fileID: 237046349}
   secoundSelect: {fileID: 1479565790}
   thirdSelect: {fileID: 1139083959}
+  forthSelect: {fileID: 899268615}
   carsol: 0
   Fbuy: {fileID: 237046351}
   Fsell: {fileID: 269798441}
@@ -12144,8 +12177,9 @@ GameObject:
   - component: {fileID: 1288431539}
   - component: {fileID: 1288431538}
   - component: {fileID: 1288431537}
+  - component: {fileID: 1288431540}
   m_Layer: 5
-  m_Name: gem (2)
+  m_Name: gem3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12244,6 +12278,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1288431535}
+--- !u!114 &1288431540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288431535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1145270532}
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1289512915
 GameObject:
   m_ObjectHideFlags: 0
@@ -12429,7 +12493,7 @@ RectTransform:
   - {fileID: 1139083960}
   - {fileID: 899268616}
   m_Father: {fileID: 353065827}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12563,7 +12627,7 @@ RectTransform:
   m_Children:
   - {fileID: 1014950920}
   m_Father: {fileID: 353065827}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05558198, y: 0.05435923}
   m_AnchorMax: {x: 0.33232796, y: 0.22135924}
@@ -13297,12 +13361,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1479565790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1479565790}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1145270532}
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1001 &1485908959
 Prefab:
   m_ObjectHideFlags: 0
@@ -13885,8 +13965,9 @@ GameObject:
   - component: {fileID: 1571498385}
   - component: {fileID: 1571498384}
   - component: {fileID: 1571498383}
+  - component: {fileID: 1571498386}
   m_Layer: 5
-  m_Name: gem (4)
+  m_Name: gem5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13904,7 +13985,7 @@ RectTransform:
   m_Children:
   - {fileID: 177601575}
   m_Father: {fileID: 353065827}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.44332796, y: 0.2864854}
   m_AnchorMax: {x: 0.569582, y: 0.5417185}
@@ -13985,6 +14066,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1571498381}
+--- !u!114 &1571498386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571498381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1145270532}
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1001 &1575097109
 Prefab:
   m_ObjectHideFlags: 0
@@ -15815,8 +15926,9 @@ GameObject:
   - component: {fileID: 1836711207}
   - component: {fileID: 1836711206}
   - component: {fileID: 1836711205}
+  - component: {fileID: 1836711208}
   m_Layer: 5
-  m_Name: gem (3)
+  m_Name: gem4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15834,7 +15946,7 @@ RectTransform:
   m_Children:
   - {fileID: 1289512916}
   m_Father: {fileID: 353065827}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.10474593, y: 0.2864854}
   m_AnchorMax: {x: 0.27800003, y: 0.5417185}
@@ -15915,6 +16027,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1836711203}
+--- !u!114 &1836711208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1836711203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1145270532}
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1858282755
 GameObject:
   m_ObjectHideFlags: 0
@@ -16373,6 +16515,80 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7909777, y: 3.3215954, z: 0.19926834}
   m_Center: {x: -0.105024576, y: 1.6607977, z: -0.046427727}
+--- !u!1 &1971540408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1971540409}
+  - component: {fileID: 1971540411}
+  - component: {fileID: 1971540410}
+  m_Layer: 5
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1971540409
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971540408}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.923409, y: -76.02624, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 353065827}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.46883607, y: 0.07764078}
+  m_AnchorMax: {x: 0.6342541, y: 0.22135924}
+  m_AnchoredPosition: {x: -0.040000916, y: -0.5}
+  m_SizeDelta: {x: -0.08999634, y: -1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1971540410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971540408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.015686275, g: 0, b: 0.44705883, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 6f17aee7e34bf4c4d913659123fae573, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: GOLD
+--- !u!222 &1971540411
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971540408}
 --- !u!1001 &1982379802
 Prefab:
   m_ObjectHideFlags: 0
@@ -19849,8 +20065,9 @@ GameObject:
   - component: {fileID: 2059106304}
   - component: {fileID: 2059106303}
   - component: {fileID: 2059106302}
+  - component: {fileID: 2059106305}
   m_Layer: 5
-  m_Name: gem (5)
+  m_Name: gem6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19868,7 +20085,7 @@ RectTransform:
   m_Children:
   - {fileID: 1383621577}
   m_Father: {fileID: 353065827}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.71441805, y: 0.24928156}
   m_AnchorMax: {x: 0.91600007, y: 0.5557185}
@@ -19949,6 +20166,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2059106300}
+--- !u!114 &2059106305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2059106300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1145270532}
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &2059935724
 GameObject:
   m_ObjectHideFlags: 0

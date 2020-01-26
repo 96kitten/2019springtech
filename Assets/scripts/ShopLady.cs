@@ -17,6 +17,8 @@ public class ShopLady : MonoBehaviour {
 	private GameObject secoundSelect;
 	[SerializeField]
 	private GameObject thirdSelect;
+	[SerializeField]
+	private GameObject forthSelect;
 
 	public void ActivateOrNotActivate(bool flag) {
 		for(var i = 0; i < transform.childCount; i++) {
@@ -63,19 +65,18 @@ public class ShopLady : MonoBehaviour {
 		Fbuy.onClick.AddListener (FIBuy);
 		Back.onClick.AddListener (BackFi);
 		gem1.onClick.AddListener (CGEM1);
+		gem2.onClick.AddListener (CGEM2);
+		gem3.onClick.AddListener (CGEM3);
+		gem4.onClick.AddListener (CGEM4);
+		gem5.onClick.AddListener (CGEM5);
+		gem6.onClick.AddListener (CGEM6);
 
-		/*gem1.OnPointerEnter (CGMent1);
-		gem2.OnPointerEnter (CGMent2);
-		gem3.OnPointerEnter (CGMent3);
-		gem4.OnPointerEnter (CGMent4);
-		gem5.OnPointerEnter (CGMent5);
-		gem6.OnPointerEnter (CGMent6);*/
-
+		ItemManager.instance.LoadItems();
 		Lbuy.onClick.AddListener (Buying);
 		Lstop.onClick.AddListener (BaToCh);
 		Back.onClick.AddListener (BaStart);
 		Hgold = GameManager.instance.Gold;
-		Hagold.text = "GOLD" + Hgold.ToString ();
+		Hagold.text = Hgold.ToString ();
 	}
 	
 
@@ -99,7 +100,7 @@ public class ShopLady : MonoBehaviour {
 		GemChoose.SetActive (true);
 		Fbuy.interactable = false;
 		EventSystem.current.SetSelectedGameObject (secoundSelect);
-		carsol = 0;
+		talk.text = "こんなジェムはどう？";
 	}
 
 	void BackFi(){
@@ -110,31 +111,107 @@ public class ShopLady : MonoBehaviour {
 	}
 
 	void CGEM1(){
+		carsol = 0;
+		gemef.text = gemeffe[carsol];
+		gemgold.text = negold [carsol].ToString () + "G";
+		if (Hgold >= negold [carsol]) {
+			Buyturn ();
+		}
+	}
+	void CGEM2(){
+		carsol = 1;
+		gemef.text = gemeffe[carsol];
+		gemgold.text = negold [carsol].ToString () + "G";
+		if (Hgold >= negold [carsol]) {
+			Buyturn ();
+		}
+	}
+	void CGEM3(){
+		carsol = 2;
+		gemef.text = gemeffe[carsol];
+		gemgold.text = negold [carsol].ToString () + "G";
+		if (Hgold >= negold [carsol]) {
+			Buyturn ();
+		}
+	}
+	void CGEM4(){
+		carsol = 3;
+		gemef.text = gemeffe[carsol];
+		gemgold.text = negold [carsol].ToString () + "G";
+		if (Hgold >= negold [carsol]) {
+			Buyturn ();
+		}
+	}
+	void CGEM5(){
+		carsol = 4;
+		gemef.text = gemeffe[carsol];
+		gemgold.text = negold [carsol].ToString () + "G";
+		if (Hgold >= negold [carsol]) {
+			Buyturn ();
+		}
+	}
+	void CGEM6(){
+		carsol = 5;
+		gemef.text = gemeffe[carsol];
+		gemgold.text = negold [carsol].ToString () + "G";
 		if (Hgold >= negold [carsol]) {
 			Buyturn ();
 		}
 	}
 
 	void Buyturn (){
+		buygold = negold[carsol];
+		effgold = gemeffe[carsol];
+		EventSystem.current.SetSelectedGameObject (thirdSelect);
 		Lbuy.interactable = true;
 		Lstop.interactable = true;
+		Back.interactable = false;
 		gem1.interactable = false;
 		gem2.interactable = false;
 		gem3.interactable = false;
 		gem4.interactable = false;
 		gem5.interactable = false;
 		gem6.interactable = false;
+		talk.text = "これにするの？";
 	}
 
 	void Buying(){
 		Hgold -= buygold;
+		Hagold.text = Hgold.ToString();
 		GameManager.instance.Gold = Hgold;
 		GameManager.instance.SaveGold();
+		if (carsol == 0) {
+			ItemManager.instance.mhpi1 += 1;
+			ItemManager.instance.ItemGet ();
+		}
+		if (carsol == 1) {
+			ItemManager.instance.mhpi2 += 1;
+			ItemManager.instance.ItemGet ();
+		}
+		if (carsol == 2) {
+			ItemManager.instance.mhpi3 += 1;
+			ItemManager.instance.ItemGet ();
+		}
+		if (carsol == 3) {
+			ItemManager.instance.mhpi4 += 1;
+			ItemManager.instance.ItemGet ();
+		}
+		if (carsol == 4) {
+			ItemManager.instance.mmpi1 += 1;
+			ItemManager.instance.ItemGet ();
+		}
+		if (carsol == 5) {
+			ItemManager.instance.mmpi2 += 1;
+			ItemManager.instance.ItemGet ();
+		}
 		if (Hgold <= buygold) {
 			Lbuy.interactable = false;
+			EventSystem.current.SetSelectedGameObject (forthSelect);
 		}
+		talk.text = "ありがとね！";
 	}
 	void BaToCh(){
+		EventSystem.current.SetSelectedGameObject (secoundSelect);
 		Lbuy.interactable = false;
 		Lstop.interactable = false;
 		gem1.interactable = true;
@@ -143,58 +220,37 @@ public class ShopLady : MonoBehaviour {
 		gem4.interactable = true;
 		gem5.interactable = true;
 		gem6.interactable = true;
+		Back.interactable = true;
 	}
 
 	void BaStart(){
-		Debug.Log ("back");
 		Swindow.SetActive (true);
 		GemChoose.SetActive (false);
 		Fbuy.interactable = true;
 		EventSystem.current.SetSelectedGameObject (firstSelect);
 	}
 
-	/*void CGMent1(){
-		carsol = 0;
+	public void OnPointerEnter(){
+		Debug.Log ("On");
+
+		if (this.gameObject.name == "gem") {
+			carsol = 0;
+		}if (this.gameObject.name == "gem2") {
+			carsol = 1;
+		}if (this.gameObject.name == "gem3") {
+			carsol = 2;
+		}if (this.gameObject.name == "gem4") {
+			carsol = 3;
+		}if (this.gameObject.name == "gem5") {
+			carsol = 4;
+		}if (this.gameObject.name == "gem6") {
+			carsol = 5;
+		}
 		buygold = negold[carsol];
 		effgold = gemeffe[carsol];
 		gemef.text = effgold;
-		gemgold.text = buygold.ToString ();
+		gemgold.text = buygold.ToString () + "G";
 	}
-	void CGMent2(){
-		carsol = 1;
-		buygold = negold[carsol];
-		effgold = gemeffe[carsol];
-		gemef.text = effgold;
-		gemgold.text = buygold.ToString ();
-	}
-	void CGMent3(){
-		carsol = 2;
-		buygold = negold[carsol];
-		effgold = gemeffe[carsol];
-		gemef.text = effgold;
-		gemgold.text = buygold.ToString ();
-	}
-	void CGMent4(){
-		carsol = 3;
-		buygold = negold[carsol];
-		effgold = gemeffe[carsol];
-		gemef.text = effgold;
-		gemgold.text = buygold.ToString ();
-	}
-	void CGMent5(){
-		carsol = 4;
-		buygold = negold[carsol];
-		effgold = gemeffe[carsol];
-		gemef.text = effgold;
-		gemgold.text = buygold.ToString ();
-	}
-	void CGMent6(){
-		carsol = 5;
-		buygold = negold[carsol];
-		effgold = gemeffe[carsol];
-		gemef.text = effgold;
-		gemgold.text = buygold.ToString ();
-	}*/
 
 	void OnTriggerExit(Collider other){
 		Swindow.SetActive (false);
