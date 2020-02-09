@@ -18,6 +18,9 @@ public class FiaryMove : MonoBehaviour {
 		if (SceneManager.GetActiveScene ().name == "Main") {
 			this.gameObject.transform.position = StatusManager.instance.playerpos;
 			this.gameObject.transform.rotation = StatusManager.instance.playerrote;
+		} else {
+			this.gameObject.transform.position = StatusManager.instance.ItemPos;
+			this.gameObject.transform.rotation = StatusManager.instance.ItemRote;
 		}
 		moving = true;
 		ItemDestroyMain.instance.destitemM ();
@@ -45,10 +48,17 @@ public class FiaryMove : MonoBehaviour {
 			}
 
 			if (Input.GetKey (KeyCode.E)) {
-				StatusManager.instance.playerpos = this.gameObject.transform.position;
-				StatusManager.instance.playerrote = this.gameObject.transform.rotation;
-				StatusManager.instance.NSceNa = SceneManager.GetActiveScene ().name;
-				SceneManager.LoadScene ("StatusItemHP");
+				if (SceneManager.GetActiveScene ().name == "Main") {
+					StatusManager.instance.playerpos = this.gameObject.transform.position;
+					StatusManager.instance.playerrote = this.gameObject.transform.rotation;
+					StatusManager.instance.NSceNa = SceneManager.GetActiveScene ().name;
+					SceneManager.LoadScene ("StatusItemHP");
+				} else {
+					StatusManager.instance.ItemPos = this.gameObject.transform.position;
+					StatusManager.instance.ItemRote = this.gameObject.transform.rotation;
+					StatusManager.instance.NSceNa = SceneManager.GetActiveScene ().name;
+					SceneManager.LoadScene ("StatusItemHP");
+				}
 			}
 		}
 	}

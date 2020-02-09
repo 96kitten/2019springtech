@@ -16,8 +16,14 @@ public class StatusManager : MonoBehaviour {
 	public int ReMaj5 = 0;
 	public int ReMaj6 = 0;
 
+	public int PlAttack = 0;
+	public int PlDefence = 0;
+
 	public Vector3 playerpos;
 	public Quaternion playerrote;
+
+	public Vector3 ItemPos;
+	public Quaternion ItemRote;
 
 	public string NSceNa;
 
@@ -43,6 +49,9 @@ public class StatusManager : MonoBehaviour {
 		ReMaj6 = PlayerPrefs.GetInt ("RMajic6",0);
 		RestS = true;
 		playerpos = new Vector3 (33,1,-15);
+
+		PlAttack = PlayerPrefs.GetInt ("PAT",0);
+		PlDefence = PlayerPrefs.GetInt ("PDE",0);
 	}
 	
 	// Update is called once per frame
@@ -91,6 +100,17 @@ public class StatusManager : MonoBehaviour {
 		ReMaj4 = PlayerPrefs.GetInt ("RMajic4",0);
 		ReMaj5 = PlayerPrefs.GetInt ("RMajic5",0);
 		ReMaj6 = PlayerPrefs.GetInt ("RMajic6",0);
+	}
+
+	public void SaveChengeStatus(){
+		PlayerPrefs.SetInt ("PAT",PlAttack);
+		PlayerPrefs.SetInt ("PDF",PlDefence);
+		PlayerPrefs.Save ();
+	}
+
+	public void LoadChengeStatus(){
+		PlAttack = PlayerPrefs.GetInt ("PAT",0);
+		PlDefence = PlayerPrefs.GetInt ("PDE",0);
 	}
 
 }

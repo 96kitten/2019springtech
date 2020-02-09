@@ -26,6 +26,8 @@ public class GameoverSc : MonoBehaviour {
 	void Start () {
 		Gtitle.onClick.AddListener (gtitle);
 		res.onClick.AddListener (Restart);
+		StatusManager.instance.LoadMaxStatus ();
+		StatusManager.instance.hprecovery ();
 	}
 	
 	// Update is called once per frame

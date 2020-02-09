@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleEnemyCon : MonoBehaviour {
 
@@ -35,7 +36,7 @@ public class BattleEnemyCon : MonoBehaviour {
 			baenemy = Instantiate (enemy1, new Vector3(4,0.5f,-3), Quaternion.identity);
 		}
 		if (GameManager.instance.battleEnemyID == 2) {
-			EnemyHP = 30;
+			EnemyHP = 25;
 		    baenemy = Instantiate (enemy2, new Vector3(4,0,-3), Quaternion.identity);
 		}
 		if (GameManager.instance.battleEnemyID == 3) {
@@ -64,7 +65,7 @@ public class BattleEnemyCon : MonoBehaviour {
 			StartCoroutine (EnemyAttack (2f, Random.Range (6, 8),Random.Range(10,17)));
 		}
 		if (GameManager.instance.battleEnemyID == 3) {
-			StartCoroutine (EnemyAttack (2f, Random.Range (10, 17),Random.Range(18,25)));
+			StartCoroutine (EnemyAttack (2f, Random.Range (10, 15),Random.Range(18,25)));
 		}
 		if (GameManager.instance.battleEnemyID == 4) {
 			StartCoroutine (EnemyAttack (2f, Random.Range (8, 13),Random.Range(26,35)));
@@ -106,7 +107,10 @@ public class BattleEnemyCon : MonoBehaviour {
 			atanimation.SetBool ("enattack", true);
 			yield return new WaitForSeconds (time);
 			atanimation.SetBool ("enattack", false);
-			playerBattle.FairyHP -= damage;
+			playerBattle.FairyHP -= damage - StatusManager.instance.PlDefence;
+			if (playerBattle.FairyHP <= 0) {
+				SceneManager.LoadScene ("GameOver");
+			}
 			//turnをtrueに
 			playerBattle.turn = true;
 			playerBattle.ButtonOn ();

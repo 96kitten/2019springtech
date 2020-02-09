@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class ShopLady : MonoBehaviour {
 
@@ -30,8 +31,8 @@ public class ShopLady : MonoBehaviour {
 	}
 
 	public int carsol;
-	int[] negold = {4,12,20,29,7,15};
-	string[] gemeffe = {"HP + 1","HP + 2","HP + 2","HP + 3","MP + 2","MP + 3"};
+	int[] negold = {4,7,13,18,7,11,16,22};
+	string[] gemeffe = {"HP + 1","HP + 2","HP + 2","HP + 3","MP + 2","MP + 3","MP + 4","MP + 5"};
 
 	//最初のボタン
 	public Button Fbuy;
@@ -111,15 +112,25 @@ public class ShopLady : MonoBehaviour {
 	}
 
 	void CGEM1(){
-		carsol = 0;
-		gemef.text = gemeffe[carsol];
+		if (SceneManager.GetActiveScene ().name == "MountainTown"){
+			carsol = 0;
+	    }
+		if (SceneManager.GetActiveScene ().name == "SeaSideTown"){
+			carsol = 4;
+		}
+		gemef.text = gemeffe [carsol];
 		gemgold.text = negold [carsol].ToString () + "G";
 		if (Hgold >= negold [carsol]) {
 			Buyturn ();
 		}
 	}
 	void CGEM2(){
-		carsol = 1;
+		if (SceneManager.GetActiveScene ().name == "MountainTown"){
+			carsol = 1;
+		}
+		if (SceneManager.GetActiveScene ().name == "SeaSideTown"){
+			carsol = 5;
+		}
 		gemef.text = gemeffe[carsol];
 		gemgold.text = negold [carsol].ToString () + "G";
 		if (Hgold >= negold [carsol]) {
@@ -127,7 +138,12 @@ public class ShopLady : MonoBehaviour {
 		}
 	}
 	void CGEM3(){
-		carsol = 2;
+		if (SceneManager.GetActiveScene ().name == "MountainTown"){
+			carsol = 2;
+		}
+		if (SceneManager.GetActiveScene ().name == "SeaSideTown"){
+			carsol = 6;
+		}
 		gemef.text = gemeffe[carsol];
 		gemgold.text = negold [carsol].ToString () + "G";
 		if (Hgold >= negold [carsol]) {
@@ -135,7 +151,12 @@ public class ShopLady : MonoBehaviour {
 		}
 	}
 	void CGEM4(){
-		carsol = 3;
+		if (SceneManager.GetActiveScene ().name == "MountainTown"){
+			carsol = 3;
+		}
+		if (SceneManager.GetActiveScene ().name == "SeaSideTown"){
+			carsol = 7;
+		}
 		gemef.text = gemeffe[carsol];
 		gemgold.text = negold [carsol].ToString () + "G";
 		if (Hgold >= negold [carsol]) {
@@ -143,7 +164,12 @@ public class ShopLady : MonoBehaviour {
 		}
 	}
 	void CGEM5(){
-		carsol = 4;
+		if (SceneManager.GetActiveScene ().name == "MountainTown"){
+			carsol = 4;
+		}
+		if (SceneManager.GetActiveScene ().name == "SeaSideTown"){
+			carsol = 1;
+		}
 		gemef.text = gemeffe[carsol];
 		gemgold.text = negold [carsol].ToString () + "G";
 		if (Hgold >= negold [carsol]) {
@@ -151,7 +177,12 @@ public class ShopLady : MonoBehaviour {
 		}
 	}
 	void CGEM6(){
-		carsol = 5;
+		if (SceneManager.GetActiveScene ().name == "MountainTown"){
+			carsol = 5;
+		}
+		if (SceneManager.GetActiveScene ().name == "SeaSideTown"){
+			carsol = 2;
+		}
 		gemef.text = gemeffe[carsol];
 		gemgold.text = negold [carsol].ToString () + "G";
 		if (Hgold >= negold [carsol]) {
@@ -202,6 +233,14 @@ public class ShopLady : MonoBehaviour {
 		}
 		if (carsol == 5) {
 			ItemManager.instance.mmpi2 += 1;
+			ItemManager.instance.ItemGet ();
+		}
+		if (carsol == 6) {
+			ItemManager.instance.mmpi3 += 1;
+			ItemManager.instance.ItemGet ();
+		}
+		if (carsol == 7) {
+			ItemManager.instance.mmpi4 += 1;
 			ItemManager.instance.ItemGet ();
 		}
 		if (Hgold <= buygold) {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossBattleSystem : MonoBehaviour {
 
@@ -17,7 +18,7 @@ public class BossBattleSystem : MonoBehaviour {
 
 	void Start () {
 		atanimation = this.GetComponent<Animator> ();
-		EnemyHP = 500;
+		EnemyHP = 800;
 		HPgauge.maxValue = EnemyHP;
 		HPgauge.value = EnemyHP;
 	}
@@ -27,7 +28,7 @@ public class BossBattleSystem : MonoBehaviour {
 	}
 
 	public void Eneturn(){
-			StartCoroutine (EnemyAttack (2f, Random.Range (15, 24)));
+			StartCoroutine (EnemyAttack (2f, Random.Range (15, 22)));
 	}
 
 	private IEnumerator EnemyAttack(float time,int damage){
@@ -44,7 +45,10 @@ public class BossBattleSystem : MonoBehaviour {
 			atanimation.SetBool ("enattack", true);
 			yield return new WaitForSeconds (time);
 			atanimation.SetBool ("enattack", false);
-			playerBoss.FairyHP -= damage;
+			playerBoss.FairyHP -= damage - StatusManager.instance.PlDefence;
+			if (playerBoss.FairyHP <= 0) {
+				SceneManager.LoadScene ("GameOver");
+			}
 			//turnをtrueに
 			playerBoss.turn = true;
 			playerBoss.ButtonOn ();

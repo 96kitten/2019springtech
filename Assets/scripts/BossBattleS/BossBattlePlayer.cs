@@ -119,7 +119,7 @@ public class BossBattlePlayer : MonoBehaviour {
 		FMP.text = FairyMP.ToString ();
 		FHP.text = FairyHP.ToString ();
 
-		RecHP = StatusManager.instance.MAXHP / 4;
+		RecHP = StatusManager.instance.MAXHP / 3;
 		RecHPGo = Mathf.CeilToInt (RecHP);
 
 		if(StatusManager.instance.ReMaj4 == 1 || StatusManager.instance.ReMaj5 == 1 || StatusManager.instance.ReMaj6 == 1){
@@ -215,7 +215,7 @@ public class BossBattlePlayer : MonoBehaviour {
 	}
 	public void Majic6(){
 		if (FairyMP >= 17 && FairyHP > 7) {
-			StartCoroutine (AttackMotion ("is_attack6", 2f, 42, 17, Ama6));
+			StartCoroutine (AttackMotion ("is_attack6", 2f, 39, 17, Ama6));
 		}
 	}
 
@@ -235,13 +235,14 @@ public class BossBattlePlayer : MonoBehaviour {
 			BattleF.SetBool (animationName, false);
 			yield return new WaitForSeconds (time);
 			par.Stop ();
-			AttackDamage = Damage;
+			AttackDamage = Damage + StatusManager.instance.PlAttack;
 			if(Damage == 0){
 				FairyHP += RecHPGo;
 				if(FairyHP > StatusManager.instance.MAXHP){
 					FairyHP = StatusManager.instance.MAXHP;
 				}
 				FHP.text = FairyHP.ToString ();
+				AttackDamage = 0;
 			}
 			if (Damage == 42) {
 				FairyHP -= 7;
@@ -253,6 +254,8 @@ public class BossBattlePlayer : MonoBehaviour {
 			majic4.gameObject.SetActive (false);
 			majic5.gameObject.SetActive (false);
 			majic6.gameObject.SetActive (false);
+			BackP.interactable = (false);
+			NextP.interactable = (true);
 			//BattleEnemyConのEneturn呼び出し
 			battleeboss.Eneturn ();
 		}

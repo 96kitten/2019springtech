@@ -38,7 +38,7 @@ public class TalkSclipt : MonoBehaviour {
 					}
 				}
 				if (GameManager.instance.FtownL == 1) {
-					talk.text = "ありがとう！何かの役に立ててね。";
+					talk.text = "ありがとう！ジェムをつけても、ちゃんと回復しなきゃ効果はないから気をつけてね";
 					mwindow.SetActive (true);
 				}
 			}

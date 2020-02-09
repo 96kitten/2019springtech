@@ -62,6 +62,10 @@ public class ItemCounter: MonoBehaviour {
 	public int change3;
 	public int change4;
 
+	//ステータス変化
+	public int ChAttack;
+	public int ChDefence;
+
 	public int HaveJem;
 
 	bool mcounter = true;
@@ -109,7 +113,7 @@ public class ItemCounter: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		MaxHPcount = 20 + change1 + change2 + change3 + change4;
-		if(I1count+I2count+I3count+I4count >= 20){
+		if(I1count+I2count+I3count+I4count >= 40){
 			mcounter = false;
 		}
 	}
@@ -130,10 +134,14 @@ public class ItemCounter: MonoBehaviour {
 				mcounter = true;
 				HaveJem = I1count + I2count + I3count + I4count;
 				Counter.text = HaveJem.ToString ();
+				mcounter = true;
 			}
 		}
 		Item1cou.text = I1count.ToString ();
 		change1 = I1count;
+		ChAttack += I1count / 3 * 3;
+		StatusManager.instance.PlAttack = ChAttack;
+		StatusManager.instance.SaveChengeStatus();
 		MaxHPcount = 20 + change1 + change2 + change3 + change4;
 		MAXCounter.text = MaxHPcount.ToString ();
 	}
@@ -155,10 +163,14 @@ public class ItemCounter: MonoBehaviour {
 				mcounter = true;
 				HaveJem = I1count + I2count + I3count + I4count;
 				Counter.text = HaveJem.ToString ();
+				mcounter = true;
 			}
 		}
 		Item2cou.text = I2count.ToString ();
 		change2 = I2count * 2;
+		ChDefence += I2count / 2;
+		StatusManager.instance.PlDefence = ChDefence;
+		StatusManager.instance.SaveChengeStatus ();
 		MaxHPcount = 20 + change1 + change2 + change3 + change4;
 		MAXCounter.text = MaxHPcount.ToString ();
 	}
@@ -179,10 +191,14 @@ public class ItemCounter: MonoBehaviour {
 				I3count -= 1;
 				HaveJem = I1count + I2count + I3count + I4count;
 				Counter.text = HaveJem.ToString ();
+				mcounter = true;
 			}
 		}
 		Item3cou.text = I3count.ToString ();
 		change3 = I3count * 2;
+		ChDefence += I2count / 3;
+		StatusManager.instance.PlDefence = ChDefence;
+		StatusManager.instance.SaveChengeStatus();
 		MaxHPcount = 20 + change1 + change2 + change3 + change4;
 		MAXCounter.text = MaxHPcount.ToString ();
 	}
@@ -202,10 +218,14 @@ public class ItemCounter: MonoBehaviour {
 				I4count -= 1;
 				HaveJem = I1count + I2count + I3count + I4count;
 				Counter.text = HaveJem.ToString ();
+				mcounter = true;
 			}
 		}
 		Item4cou.text = I4count.ToString ();
 		change4 = I4count * 3;
+		ChDefence -= I4count / 2 * 2;
+		StatusManager.instance.PlDefence = ChDefence;
+		StatusManager.instance.SaveChengeStatus ();
 		MaxHPcount = 20 + change1 + change2 + change3 + change4;
 		MAXCounter.text = MaxHPcount.ToString ();
 	}

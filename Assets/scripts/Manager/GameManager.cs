@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
 		enemy2count = PlayerPrefs.GetInt ("count2",5);
 		enemy3count = PlayerPrefs.GetInt ("count3",3);
 		enemy4count = PlayerPrefs.GetInt ("count4",6);
-		bosscount = PlayerPrefs.GetInt ("Bcount",1);
+		bosscount = PlayerPrefs.GetInt ("Bcount",0);
 		FtownL = PlayerPrefs.GetInt ("town1ta", 0);
 		Gold = PlayerPrefs.GetInt ("GOLD",20);
 	}
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour {
 		enemy2count = PlayerPrefs.GetInt ("count2",5);
 		enemy3count = PlayerPrefs.GetInt ("count3",3);
 		enemy4count = PlayerPrefs.GetInt ("count4",6);
-		bosscount = PlayerPrefs.GetInt ("Bcount",1);
+		bosscount = PlayerPrefs.GetInt ("Bcount",0);
 	}
 
 	public void FiTown(){
@@ -76,6 +76,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void LoadGold(){
-		Gold = PlayerPrefs.GetInt ("GOLD",0);
+		Gold = PlayerPrefs.GetInt ("GOLD",20);
 	}
 }
